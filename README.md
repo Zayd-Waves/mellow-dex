@@ -1,2 +1,5 @@
-# Mellow-Dex
-Pokedex application for Android
+# Mellow Dex
+
+A Pokedex application for Android. 
+
+
