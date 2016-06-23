@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Mellow Dex</string>
+
+    <!-- Page titles -->
+    <string name="pokedexScreenTitle">Pokédex</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

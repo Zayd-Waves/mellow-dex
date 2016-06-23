@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- "Lab" Theme Colours -->
+    <color name="colorPrimary">#F44336</color>
+    <color name="colorPrimaryDark">#D32F2F</color>
+    <color name="colorAccent">#FF5722</color>
+    <color name="colorLightPrimary">#ffcdd2</color>
+    <color name="iconColor">#FFFFFF</color>
+    <color name="textPrimary">#727272</color>
+    <color name="textSecondary">#B6B6B6</color>
+    <color name="textColorDarkRed">#8e4242</color>
+    <color name="textColorLight">#dfa2a8</color>
+
+
+    <!-- "Diamond and Pearl" Theme Colours -->
+    <color name="colorPrimaryDP">#3f51b5</color>
+    <color name="colorPrimaryDarkDP">#303f9f</color>
+    <color name="colorAccentDP">#ff4081</color>
+    <color name="colorLightPrimaryDP">#c5cae9</color>
+    <color name="iconColorDP">#FFFFFF</color>
+    <color name="textPrimaryDP">#727272</color>
+    <color name="textSecondaryDP">#B6B6B6</color>
+
+
+
+
+
+    <!-- Type badge text and colours -->
+    <color name="type_text_color">#fbfbfb</color>
+    <color name="grey_font">#ff9e9e9e</color>
+    <color name="text_shadow">#7F000000</color>
+    <color name="text_shadow_white">#FFFFFF</color>
+    <color name="normal">#a3a375</color>
+    <color name="fire">#ff4d4d</color>
+    <color name="fighting">#990000</color>
+    <color name="water">#66b3ff</color>
+    <color name="flying">#cc99ff</color>
+    <color name="grass">#5cd65c</color>
+    <color name="poison">#cc33ff</color>
+    <color name="electric">#ffcc00</color>
+    <color name="ground">#ffeb99</color>
+    <color name="psychic">#ff4dd2</color>
+    <color name="rock">#99994d</color>
+    <color name="ice">#b3ffff</color>
+    <color name="bug">#aaff00</color>
+    <color name="dragon">#6666cc</color>
+    <color name="ghost">#8533ff</color>
+    <color name="dark">#000033</color>
+    <color name="steel">#a3c2c2</color>
+    <color name="fairy">#ffb3ff</color>
+
+
+    <!-- Miscellaneous colours -->
+    <color name="textColorBlack">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="caught">#5cd65c</color>
+
+</resources>
