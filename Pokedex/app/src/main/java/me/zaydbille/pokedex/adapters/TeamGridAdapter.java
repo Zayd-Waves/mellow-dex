@@ -1,3 +1,18 @@
+/*
+ -----------------------------------------------------------------------
+|                                                                       |
+|   Class:          TeamGridAdapter                                     |
+|   Description:    TeamGridAdapter class.                              |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+|   Author:         Zayd-Waves                                          |
+|   Date:           5/31/2016                                           |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+ -----------------------------------------------------------------------
+*/
 package me.zaydbille.pokedex.adapters;
 
 import android.content.Context;
@@ -5,19 +20,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import me.zaydbille.pokedex.R;
 import me.zaydbille.pokedex.data.Pokemon;
 
-/**
- * Created by Zayd on 6/19/16.
- */
 public class TeamGridAdapter extends BaseAdapter {
 
-    private Context context;
-    private final Pokemon[] pokemon;
+    private Context                             context;
+    private final Pokemon[]                     pokemon;
 
     public TeamGridAdapter(Context context, Pokemon[] pokemon) {
         this.context = context;
@@ -25,29 +37,24 @@ public class TeamGridAdapter extends BaseAdapter {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View gridView;
-
         if (convertView == null) {
 
-            gridView = new View(context);
-
-            // get layout from mobile.xml
+            /* Get the layout. */
             gridView = inflater.inflate(R.layout.team_item_layout, null);
 
-            // set value into textview
+            /* Set the TextView's value. */
             TextView textView = (TextView) gridView.findViewById(R.id.pokemonText);
             textView.setText(pokemon[position].getName());
 
-            // set image based on selected text
+            /* Set image based on the Pokemon. */
             ImageView imageView = (ImageView) gridView.findViewById(R.id.pokemonImage);
-            imageView.setImageResource(R.drawable.p1);
+            imageView.setImageResource(R.drawable.bulbasaur);
 
         } else {
-            gridView = (View) convertView;
+            gridView = (View)convertView;
         }
-
         return gridView;
     }
 

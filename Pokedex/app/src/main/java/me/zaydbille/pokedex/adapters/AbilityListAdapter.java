@@ -1,8 +1,8 @@
 /*
  -----------------------------------------------------------------------
 |                                                                       |
-|   Class:          PokedexListAdapter                                  |
-|   Description:    Custom list adapter for the PokedexScreen's         |
+|   Class:          AbilityListAdapter                                  |
+|   Description:    Custom list adapter for the AbilityScreen's         |
 |                   ListView.                                           |
 |                                                                       |
 |                                                                       |
@@ -13,12 +13,10 @@
 |                                                                       |
  -----------------------------------------------------------------------
 */
-
 package me.zaydbille.pokedex.adapters;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,17 +27,14 @@ import java.util.ArrayList;
 import java.util.List;
 import me.zaydbille.pokedex.R;
 import me.zaydbille.pokedex.data.Ability;
-import me.zaydbille.pokedex.data.Move;
-import me.zaydbille.pokedex.data.Pokemon;
 
 public class AbilityListAdapter extends ArrayAdapter<Ability> implements android.widget.Filterable {
 
-    Context context;
-    static int customLayout = R.layout.ability_list_row;
-    List<Ability> data = null;
-    List<Ability> fullList = null;
-    private AbilityFilter mFilter = new AbilityFilter();
-
+    private Context                             context;
+    static int                                  customLayout = R.layout.ability_list_row;
+    private List<Ability>                       data = null;
+    private List<Ability>                       fullList = null;
+    private AbilityFilter                       mFilter = new AbilityFilter();
 
     public AbilityListAdapter(Context context, List<Ability> data) {
         super(context, customLayout, data);
@@ -56,10 +51,9 @@ public class AbilityListAdapter extends ArrayAdapter<Ability> implements android
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View row = convertView;
-        AbilityHolder holder = null;
+        AbilityHolder holder;
 
-        if(row == null)
-        {
+        if(row == null) {
             LayoutInflater inflater = ((Activity)context).getLayoutInflater();
             row = inflater.inflate(customLayout, parent, false);
 
@@ -68,9 +62,7 @@ public class AbilityListAdapter extends ArrayAdapter<Ability> implements android
             holder.abilityDescription = (TextView)row.findViewById(R.id.abilityDescription);
 
             row.setTag(holder);
-        }
-        else
-        {
+        } else {
             holder = (AbilityHolder) row.getTag();
         }
 
@@ -118,7 +110,6 @@ public class AbilityListAdapter extends ArrayAdapter<Ability> implements android
         @Override
         protected void publishResults(CharSequence constraint,
                                       FilterResults results) {
-
             data = (ArrayList<Ability>)results.values;
 
             if (results.count > 0) {
@@ -127,7 +118,6 @@ public class AbilityListAdapter extends ArrayAdapter<Ability> implements android
                 notifyDataSetInvalidated();
             }
         }
-
     }
 
     @Override
@@ -137,5 +127,4 @@ public class AbilityListAdapter extends ArrayAdapter<Ability> implements android
         }
         return mFilter;
     }
-
 }

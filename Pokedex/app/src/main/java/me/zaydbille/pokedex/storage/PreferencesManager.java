@@ -1,34 +1,46 @@
+/*
+ -----------------------------------------------------------------------
+|                                                                       |
+|   Class:          PreferencesManager                                  |
+|   Description:    PreferencesManager class.                           |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+|   Author:         Zayd-Waves                                          |
+|   Date:           5/31/2016                                           |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+ -----------------------------------------------------------------------
+*/
+
 package me.zaydbille.pokedex.storage;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
-import java.util.StringTokenizer;
 
+import me.zaydbille.pokedex.data.Ability;
+import me.zaydbille.pokedex.data.Move;
 import me.zaydbille.pokedex.data.Pokemon;
 import me.zaydbille.pokedex.data.Team;
 
-/**
- * Created by Zayd on 5/29/16.
- */
-
 public class PreferencesManager {
 
-    public static final String PREFS_NAME = "PrefsFile";
-    private static HashSet<String> caughtPokemon;
-    private static List<Pokemon> allPokemon;
+    public static final String                  PREFS_NAME = "PrefsFile";
+    private static HashSet<String>              caughtPokemon;
+    private static List<Pokemon>                allPokemon;
+    private static List<Move>                   allMoves;
+    private static List<Ability>                allAbilities;
+    private static HashMap<Integer, Integer>    machines;
 
-    /*
-        We'll use the next three methods to check if it's the first time opening the app.
-    */
+    /* We'll use the next three methods to check if it's the first time opening the app. */
     public static SharedPreferences getPreferences(Context context) {
         return context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
     }
@@ -42,6 +54,7 @@ public class PreferencesManager {
         return prefs.getString("firstTime", "nil");
     }
 
+    /* Theme related methods */
     public static void setThemeToLabTheme(Context context){
         SharedPreferences.Editor editor = context.getSharedPreferences(PREFS_NAME, context.MODE_PRIVATE).edit();
         editor.putString("theme", "LabTheme");
@@ -59,11 +72,7 @@ public class PreferencesManager {
         return prefs.getString("theme", "default");
     }
 
-
-
-    /*
-        Managing the caught Pokemon.
-    */
+    /* Managing the caught Pokemon. */
     public static void saveAllCaughtPokemon(Context context, HashSet<String> caughtSet) {
         caughtPokemon = caughtSet;
         SharedPreferences.Editor editor = context.getSharedPreferences(PREFS_NAME, 0).edit();
@@ -102,10 +111,7 @@ public class PreferencesManager {
         }
     }
 
-    /*
-        Managing teams.
-    */
-
+    /* Managing teams. */
     public static void addTeamCount(Context context) {
         SharedPreferences.Editor editor = context.getSharedPreferences(PREFS_NAME, context.MODE_PRIVATE).edit();
         int newCount = getTeamCount(context) + 1;
@@ -148,7 +154,8 @@ public class PreferencesManager {
 
         List<Team> oldTeams = getTeams(context);
         if (oldTeams != null) {
-            teams.addAll(oldTeams); // get the currently saved messages and merge into one list
+            /* Get the currently saved messages and merge into one list. */
+            teams.addAll(oldTeams);
         }
 
         Gson gson = new Gson();
@@ -173,16 +180,37 @@ public class PreferencesManager {
             }
             return teams;
         } else {
-            return new ArrayList<Team>(); // No messages right now...
+            /* No teams found... */
+            return new ArrayList<Team>();
         }
     }
 
+    /* Managing the Pokemon data */
     public static List<Pokemon> getAllPokemon() {
         return allPokemon;
     }
-
     public static void setAllPokemon(List<Pokemon> pokemon) {
         allPokemon = pokemon;
+    }
+    public static void updateSinglePokemon(Pokemon updatedPokemon, int position) {
+        allPokemon.set(position, updatedPokemon);
+    }
+
+    public static List<Move> getAllMoves() {
+        return allMoves;
+    }
+    public static void setAllMoves(List<Move> moves) {
+        allMoves = moves;
+    }
+
+    public static HashMap<Integer, Integer> getAllMachines() { return machines; }
+    public static void setAllMachines(HashMap<Integer, Integer> machineList) { machines = machineList; }
+
+    public static List<Ability> getAllAbilities() {
+        return allAbilities;
+    }
+    public static void setAllAbilities(List<Ability> abilities) {
+        allAbilities = abilities;
     }
 
 }

@@ -1,3 +1,18 @@
+/*
+ -----------------------------------------------------------------------
+|                                                                       |
+|   Class:          PokemonDetails                                      |
+|   Description:    Details of a single Pokemon.                        |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+|   Author:         Zayd-Waves                                          |
+|   Date:           5/31/2016                                           |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+ -----------------------------------------------------------------------
+*/
 package me.zaydbille.pokedex.activities;
 
 import android.content.Context;
@@ -14,9 +29,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
-
 import java.util.List;
-
 import me.zaydbille.pokedex.R;
 import me.zaydbille.pokedex.adapters.DetailsPagerAdapter;
 import me.zaydbille.pokedex.data.Pokemon;
@@ -34,12 +47,12 @@ public class PokemonDetails extends AppCompatActivity implements
         AbilityDetails.OnFragmentInteractionListener,
         EggDetails.OnFragmentInteractionListener {
 
-    private ActionMenuView amvMenu;
-    private Pokemon pokemon;
-    private Context mContext;
-    private int tabColour;
-    List<Pokemon> allPokemon;
-    TextView toolbarTitle;
+    private ActionMenuView                      amvMenu;
+    private Pokemon                             pokemon;
+    private Context                             mContext;
+    private int                                 tabColour;
+    private List<Pokemon>                       allPokemon;
+    private TextView                            toolbarTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +82,6 @@ public class PokemonDetails extends AppCompatActivity implements
         Bundle bundle = getIntent().getExtras();
         int pokemonId = bundle.getInt("pokemonId");
 
-
         allPokemon = PreferencesManager.getAllPokemon();
         for (int i = 0; i < allPokemon.size(); i++) {
             if (allPokemon.get(i).getId() == pokemonId) {
@@ -82,6 +94,8 @@ public class PokemonDetails extends AppCompatActivity implements
             set the default tab to the Pokedex.
         */
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        //final DetailsPagerAdapter adapter = new DetailsPagerAdapter
+        //        (getSupportFragmentManager(), 5, mContext, pokemon);
         final DetailsPagerAdapter adapter = new DetailsPagerAdapter
                 (getSupportFragmentManager(), 5, mContext, pokemon);
         viewPager.setAdapter(adapter);
@@ -111,7 +125,6 @@ public class PokemonDetails extends AppCompatActivity implements
         TabLayout tabLayout = (TabLayout)findViewById(R.id.tab_layout);
         tabLayout.setBackgroundColor(ContextCompat.getColor(mContext, tabColour));
         tabLayout.setupWithViewPager(viewPager);
-
     }
 
     @Override

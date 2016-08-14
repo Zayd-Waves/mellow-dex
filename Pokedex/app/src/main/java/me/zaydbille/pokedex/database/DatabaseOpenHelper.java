@@ -1,8 +1,19 @@
+/*
+ -----------------------------------------------------------------------
+|                                                                       |
+|   Class:          DatabaseOpenHelper                                  |
+|   Description:    DatabaseOpenHelper class.                           |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+|   Author:         Zayd-Waves                                          |
+|   Date:           5/31/2016                                           |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+ -----------------------------------------------------------------------
+*/
 package me.zaydbille.pokedex.database;
-
-/**
- * Created by Zayd on 5/28/16.
- */
 
 import android.content.Context;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;

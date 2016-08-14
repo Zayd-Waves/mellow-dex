@@ -1,3 +1,18 @@
+/*
+ -----------------------------------------------------------------------
+|                                                                       |
+|   Class:          CaughtListAdapter                                   |
+|   Description:    Custom list adapter for the CaughtScreen's          |
+|                   ListView.                                           |
+|                                                                       |
+|                                                                       |
+|   Author:         Zayd-Waves                                          |
+|   Date:           5/31/2016                                           |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+ -----------------------------------------------------------------------
+*/
 package me.zaydbille.pokedex.adapters;
 
 import android.app.Activity;
@@ -10,26 +25,21 @@ import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import me.zaydbille.pokedex.R;
 import me.zaydbille.pokedex.data.Pokemon;
 import me.zaydbille.pokedex.storage.PreferencesManager;
 
-/**
- * Created by Zayd on 6/18/16.
- */
 public class CaughtListAdapter extends ArrayAdapter<Pokemon> implements android.widget.Filterable {
 
-    Context context;
-    static int customLayout = R.layout.caught_list_row;
-    int rowTextColour = 0;
-    int rowColour = 0;
-    List<Pokemon> fullList = null;
-    List<Pokemon> data = null;
-    private PokemonFilter mFilter = new PokemonFilter();
+    private Context                             context;
+    private static int                          customLayout = R.layout.caught_list_row;
+    private int                                 rowTextColour = 0;
+    private int                                 rowColour = 0;
+    private List<Pokemon>                       fullList = null;
+    private List<Pokemon>                       data = null;
+    private AbilityFilter                       mFilter = new AbilityFilter();
 
     public CaughtListAdapter(Context context, List<Pokemon> data, int textColor, int rowCol) {
         super(context, customLayout, data);
@@ -50,13 +60,11 @@ public class CaughtListAdapter extends ArrayAdapter<Pokemon> implements android.
         return data.get(position);
     }
 
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View row = convertView;
-        PokemonHolder holder = null;
-        if(row == null)
-        {
+        PokemonHolder holder;
+        if(row == null) {
             LayoutInflater inflater = ((Activity)context).getLayoutInflater();
             row = inflater.inflate(customLayout, parent, false);
 
@@ -87,7 +95,6 @@ public class CaughtListAdapter extends ArrayAdapter<Pokemon> implements android.
         }
         holder.pokedexNumber.setText(pokemon.getNumberString());
         holder.pokemonName.setText(pokemon.getName());
-
         return row;
     }
 
@@ -97,51 +104,7 @@ public class CaughtListAdapter extends ArrayAdapter<Pokemon> implements android.
         ImageView checkmark;
     }
 
-    private int getTypeColour(String type) {
-        int c = 0;
-
-        if (type.toLowerCase().equals("normal")) {
-            c = ContextCompat.getColor(context, R.color.normal);
-        } else if (type.toLowerCase().equals("fire")) {
-            c = ContextCompat.getColor(context, R.color.fire);
-        } else if (type.toLowerCase().equals("fighting")) {
-            c = ContextCompat.getColor(context, R.color.fighting);
-        } else if (type.toLowerCase().equals("water")) {
-            c = ContextCompat.getColor(context, R.color.water);
-        } else if (type.toLowerCase().equals("flying")) {
-            c = ContextCompat.getColor(context, R.color.flying);
-        } else if (type.toLowerCase().equals("grass")) {
-            c = ContextCompat.getColor(context, R.color.grass);
-        } else if (type.toLowerCase().equals("poison")) {
-            c = ContextCompat.getColor(context, R.color.poison);
-        } else if (type.toLowerCase().equals("electric")) {
-            c = ContextCompat.getColor(context, R.color.electric);
-        } else if (type.toLowerCase().equals("ground")) {
-            c = ContextCompat.getColor(context, R.color.ground);
-        } else if (type.toLowerCase().equals("psychic")) {
-            c = ContextCompat.getColor(context, R.color.psychic);
-        } else if (type.toLowerCase().equals("rock")) {
-            c = ContextCompat.getColor(context, R.color.rock);
-        } else if (type.toLowerCase().equals("ice")) {
-            c = ContextCompat.getColor(context, R.color.ice);
-        } else if (type.toLowerCase().equals("bug")) {
-            c = ContextCompat.getColor(context, R.color.bug);
-        } else if (type.toLowerCase().equals("dragon")) {
-            c = ContextCompat.getColor(context, R.color.dragon);
-        } else if (type.toLowerCase().equals("ghost")) {
-            c = ContextCompat.getColor(context, R.color.ghost);
-        } else if (type.toLowerCase().equals("dark")) {
-            c = ContextCompat.getColor(context, R.color.dark);
-        } else if (type.toLowerCase().equals("steel")) {
-            c = ContextCompat.getColor(context, R.color.steel);
-        } else if (type.toLowerCase().equals("fairy")) {
-            c = ContextCompat.getColor(context, R.color.fairy);
-        }
-
-        return c;
-    }
-
-    private class PokemonFilter extends Filter {
+    private class AbilityFilter extends Filter {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             FilterResults results = new FilterResults();
@@ -176,7 +139,6 @@ public class CaughtListAdapter extends ArrayAdapter<Pokemon> implements android.
                 results.values = fullList;
             }
             return results;
-
         }
 
         @Override
@@ -191,13 +153,12 @@ public class CaughtListAdapter extends ArrayAdapter<Pokemon> implements android.
                 notifyDataSetInvalidated();
             }
         }
-
     }
 
     @Override
     public Filter getFilter() {
         if (mFilter == null) {
-            mFilter = new PokemonFilter();
+            mFilter = new AbilityFilter();
         }
         return mFilter;
     }

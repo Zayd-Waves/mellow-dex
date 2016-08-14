@@ -1,19 +1,27 @@
+/*
+ -----------------------------------------------------------------------
+|                                                                       |
+|   Class:          TypeUtils                                           |
+|   Description:    TypeUtils class.                                    |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+|   Author:         Zayd-Waves                                          |
+|   Date:           5/31/2016                                           |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+ -----------------------------------------------------------------------
+*/
 package me.zaydbille.pokedex.utils;
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
-
-import java.nio.channels.FileChannel;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-
 import me.zaydbille.pokedex.R;
 
-/**
- * Created by Zayd on 6/03/16.
- */
 public final class TypeUtils {
 
     public static String[] TYPES = {"normal",
@@ -47,47 +55,32 @@ public final class TypeUtils {
         } else {
             HashMap<String, Double> typeOneDefenses = getCoverageDefense(type1);
             HashMap<String, Double> typeTwoDefenses = getCoverageDefense(type2);
-            HashMap<String, Double> iteratingMap = new HashMap<String, Double>();
 
 
-
-            if (typeOneDefenses.size() > typeTwoDefenses.size()) {
-                coverageDefense.putAll(typeOneDefenses);
-                iteratingMap.putAll(typeTwoDefenses);
-            } else if (typeOneDefenses.size() == typeTwoDefenses.size()) {
-                coverageDefense.putAll(typeOneDefenses);
-                iteratingMap.putAll(typeTwoDefenses);
-            } else {
-                coverageDefense.putAll(typeTwoDefenses);
-                iteratingMap.putAll(typeOneDefenses);
-            }
-
-
-
-            for (Map.Entry<String, Double> entry : iteratingMap.entrySet()) {
+            for (Map.Entry<String, Double> entry : typeOneDefenses.entrySet()) {
                 String key = entry.getKey();
                 Double value = entry.getValue();
 
-                if (coverageDefense.get(key) == null) {
-                    coverageDefense.put(key, value);
+                if (typeTwoDefenses.get(key) == null) {
+                    typeTwoDefenses.put(key, value);
                 } else {
-                    if (coverageDefense.get(key) == 0 || value == 0.0) {
-                        coverageDefense.put(key, 0.0);
-                    } else if (coverageDefense.get(key) < 1.0 && value < 1.0) {
-                        coverageDefense.put(key, 0.25);
-                    } else if (coverageDefense.get(key) < 1.0 && value > 1.0) {
-                        coverageDefense.remove(key);
-                    } else if (coverageDefense.get(key) > 1.0 && value < 1.0) {
-                        coverageDefense.remove(key);
-                    } else if (coverageDefense.get(key) > 1.0 && value > 1.0) {
-                        coverageDefense.put(key, 4.0);
+                    if (typeTwoDefenses.get(key) == 0 || value == 0.0) {
+                        typeTwoDefenses.put(key, 0.0);
+                    } else if (typeTwoDefenses.get(key) < 1.0 && value < 1.0) {
+                        typeTwoDefenses.put(key, 0.25);
+                    } else if (typeTwoDefenses.get(key) < 1.0 && value > 1.0) {
+                        typeTwoDefenses.remove(key);
+                    } else if (typeTwoDefenses.get(key) > 1.0 && value < 1.0) {
+                        typeTwoDefenses.remove(key);
+                    } else if (typeTwoDefenses.get(key) > 1.0 && value > 1.0) {
+                        typeTwoDefenses.put(key, 4.0);
                     }
                 }
             }
 
 
 
-            return coverageDefense;
+            return typeTwoDefenses;
         }
     }
 
@@ -356,7 +349,7 @@ public final class TypeUtils {
             coverageOffense.put("ground", 2.0);
             coverageOffense.put("rock", 2.0);
             coverageOffense.put("water", 2.0);
-            coverageOffense.put("flying", 2.0);
+            coverageOffense.put("flying", 0.5);
             coverageOffense.put("poison", 0.5);
             coverageOffense.put("bug", 0.5);
             coverageOffense.put("steel", 0.5);

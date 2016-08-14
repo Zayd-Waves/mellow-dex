@@ -13,7 +13,6 @@
 |                                                                       |
  -----------------------------------------------------------------------
 */
-
 package me.zaydbille.pokedex.activities;
 
 import android.content.Context;
@@ -28,15 +27,17 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-
 import me.zaydbille.pokedex.R;
 import me.zaydbille.pokedex.storage.PreferencesManager;
 
 public class Settings extends AppCompatActivity {
 
-    private static final int RESULT_SETTINGS = 1;
-    Context mContext;
-    private ActionMenuView amvMenu;
+    private static final int                            RESULT_SETTINGS = 1;
+    private Context                                     mContext;
+    private ActionMenuView                              amvMenu;
+    private RadioGroup                                  radioGroup;
+    private RadioButton                                 radioButtonLabTheme;
+    private RadioButton                                 radioButtonDPTheme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,9 +60,7 @@ public class Settings extends AppCompatActivity {
         overridePendingTransition(R.anim.fadein, R.anim.fadeout);
         setContentView(R.layout.activity_settings);
 
-        /*
-            Set up our custom ActionMenuView.
-        */
+        /* Set up our custom ActionMenuView. */
         Toolbar t = (Toolbar) findViewById(R.id.tToolbar);
         amvMenu = (ActionMenuView) t.findViewById(R.id.amvMenu);
         amvMenu.setOnMenuItemClickListener(new ActionMenuView.OnMenuItemClickListener() {
@@ -76,12 +75,10 @@ public class Settings extends AppCompatActivity {
         }
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        /*
-            Set up the RadioGroup.
-        */
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.themeOptions);
-        RadioButton radioButtonLabTheme = (RadioButton)findViewById(R.id.radioButtonLabTheme);
-        RadioButton radioButtonDPTheme = (RadioButton)findViewById(R.id.radioButtonDPTheme);
+        /* Set up the RadioGroup. */
+        radioGroup = (RadioGroup) findViewById(R.id.themeOptions);
+        radioButtonLabTheme = (RadioButton)findViewById(R.id.radioButtonLabTheme);
+        radioButtonDPTheme = (RadioButton)findViewById(R.id.radioButtonDPTheme);
 
         /* Set the current theme's button to 'selected'. */
         switch (currentTheme) {

@@ -1,67 +1,64 @@
+/*
+ -----------------------------------------------------------------------
+|                                                                       |
+|   Class:          TeamScreen                                          |
+|   Description:    TeamScreen fragment.                                |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+|   Author:         Zayd-Waves                                          |
+|   Date:           5/31/2016                                           |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+ -----------------------------------------------------------------------
+*/
 package me.zaydbille.pokedex.fragments;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.text.InputType;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-
 import me.zaydbille.pokedex.R;
 import me.zaydbille.pokedex.adapters.TeamGridAdapter;
 import me.zaydbille.pokedex.data.Pokemon;
 import me.zaydbille.pokedex.data.Team;
 import me.zaydbille.pokedex.storage.PreferencesManager;
-import me.zaydbille.pokedex.utils.TypeUtils;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link TeamScreen.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link TeamScreen#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class TeamScreen extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    private OnFragmentInteractionListener mListener;
-    private GridView gridView;
-    private Context mContext;
-    private List<Team> teams;
-    private Team currentTeam;
-    private TeamGridAdapter teamGridAdapter;
-    private String newTeamName;
+    private OnFragmentInteractionListener                   mListener;
+    private GridView                                        gridView;
+    private Context                                         mContext;
+    private List<Team>                                      teams;
+    private Team                                            currentTeam;
+    private TeamGridAdapter                                 teamGridAdapter;
+    private String                                          newTeamName;
+    private ArrayAdapter                                    dataAdapterOne;
+    private String[]                                        teamTitles;
+    private Spinner                                         teamSpinner;
 
     public TeamScreen() {
-        // Required empty public constructor
+        /* Required empty public constructor. */
     }
     public static TeamScreen newInstance(Context context) {
         TeamScreen fragment = new TeamScreen();
@@ -72,16 +69,14 @@ public class TeamScreen extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater,
+                             ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
+        /* Inflate the layout for this fragment. */
         View v = inflater.inflate(R.layout.fragment_teamscreen, container, false);
 
         ImageView optionsButton = (ImageView)v.findViewById(R.id.optionsButton);
@@ -93,24 +88,25 @@ public class TeamScreen extends Fragment {
             }
         });
 
-        Spinner teamSpinner = (Spinner) v.findViewById(R.id.teamSpinner);
+        teamSpinner = (Spinner) v.findViewById(R.id.teamSpinner);
         teamSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+            public void onItemSelected(AdapterView<?> parent,
+                                       View view,
+                                       int position,
+                                       long id) {
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
 
-        // Creating adapter for spinner
+        /* Creating the adapter for spinner. */
         teams = PreferencesManager.getTeams(mContext);
-        String[] teamTitles = new String[teams.size()];
+        teamTitles = new String[teams.size()];
         if (teams.size() == 0) {
-            // show empty view
+             /* Show the empty view. */
             gridView.setVisibility(View.INVISIBLE);
         } else {
             gridView.setVisibility(View.VISIBLE);
@@ -118,14 +114,14 @@ public class TeamScreen extends Fragment {
                 teamTitles[i] = teams.get(i).getTitle();
             }
         }
-        ArrayAdapter dataAdapterOne = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, teamTitles);
+        dataAdapterOne = new ArrayAdapter(mContext, android.R.layout.simple_spinner_item, new ArrayList<String>(Arrays.asList(teamTitles)));
         dataAdapterOne.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         teamSpinner.setAdapter(dataAdapterOne);
 
-        if (!(teams.size() == 0)) {
-            currentTeam = teams.get(0);
-            currentTeam.setPokemon(teams.get(0).getPokemon());
-        } else {
+        //if (!(teams.size() == 0)) {
+        //    currentTeam = teams.get(0);
+        //    currentTeam.setPokemon(teams.get(0).getPokemon());
+        //} else {
             currentTeam = new Team();
             currentTeam.setPokemon(new Pokemon[]{   new Pokemon(65, "Charmander", "fire", null),
                     new Pokemon(66, "Entei", "fire", null),
@@ -133,7 +129,7 @@ public class TeamScreen extends Fragment {
                     new Pokemon(68, "Vulpix", "fire", null),
                     new Pokemon(69, "Flareon", "fire", null),
                     new Pokemon(70, "Fennekin", "fire", null)});
-        }
+        //}
         teamGridAdapter = new TeamGridAdapter(mContext, currentTeam.getPokemon());
         gridView.setAdapter(teamGridAdapter);
         gridView.setNumColumns(2);
@@ -157,8 +153,6 @@ public class TeamScreen extends Fragment {
                 currentTeam.setPokemon(team);
                 teamGridAdapter.notifyDataSetChanged();
                 teamGridAdapter.notifyDataSetChanged();
-
-
             }
 
             @Override
@@ -166,9 +160,6 @@ public class TeamScreen extends Fragment {
 
             }
         });
-
-
-
         return v;
     }
 
@@ -205,16 +196,21 @@ public class TeamScreen extends Fragment {
                         if (choice.equals("Create Team")) {
                             builderInner.setTitle("Create Team");
 
-                            // Set up the input
+                            /* Set up the input. */
                             final EditText input = new EditText(mContext);
                             input.setInputType(InputType.TYPE_CLASS_TEXT);
                             builderInner.setView(input);
 
-                            // Set up the buttons
+                            /* Set up the buttons. */
                             builderInner.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     newTeamName = input.getText().toString();
+                                    Team t = new Team();
+                                    t.setTitle(newTeamName);
+                                    teams.add(t);
+                                    PreferencesManager.updateTeams(mContext, teams);
+                                    updateTeamSpinner();
                                     dialog.dismiss();
                                 }
                             });
@@ -238,7 +234,6 @@ public class TeamScreen extends Fragment {
         builderSingle.show();
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -267,13 +262,24 @@ public class TeamScreen extends Fragment {
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
      * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+    */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    public void updateTeamSpinner() {
+        teamTitles = new String[teams.size()];
+        for(int i = 0; i < teams.size(); i++) {
+            teamTitles[i] = teams.get(i).getTitle();
+        }
+        teamSpinner.setAdapter(null);
+        dataAdapterOne.clear();
+        dataAdapterOne.notifyDataSetChanged();
+        dataAdapterOne = new ArrayAdapter(mContext, android.R.layout.simple_spinner_item, new ArrayList<String>(Arrays.asList(teamTitles)));
+        dataAdapterOne.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        teamSpinner.setAdapter(dataAdapterOne);
+
+        dataAdapterOne.notifyDataSetInvalidated();
+        dataAdapterOne.notifyDataSetChanged();
     }
 }

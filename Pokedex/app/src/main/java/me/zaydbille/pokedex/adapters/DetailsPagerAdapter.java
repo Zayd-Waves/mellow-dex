@@ -1,39 +1,25 @@
+/*
+ -----------------------------------------------------------------------
+|                                                                       |
+|   Class:          DetailsPagerAdapter                                 |
+|   Description:    DetailsPagerAdapter class.                          |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+|   Author:         Zayd-Waves                                          |
+|   Date:           5/31/2016                                           |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+ -----------------------------------------------------------------------
+*/
 package me.zaydbille.pokedex.adapters;
 
-/**
- * Created by Zayd on 6/01/16.
- */
-
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-
-import java.util.List;
-
-import me.zaydbille.pokedex.data.Ability;
 import me.zaydbille.pokedex.data.Pokemon;
-import me.zaydbille.pokedex.fragments.AbilityScreen;
-import me.zaydbille.pokedex.fragments.CaughtScreen;
-import me.zaydbille.pokedex.fragments.LocationScreen;
-import me.zaydbille.pokedex.fragments.MoveScreen;
-import me.zaydbille.pokedex.fragments.PokedexScreen;
-import me.zaydbille.pokedex.fragments.TeamScreen;
-import me.zaydbille.pokedex.fragments.TypeScreen;
-
-import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import java.util.List;
-import me.zaydbille.pokedex.data.Pokemon;
-import me.zaydbille.pokedex.fragments.AbilityScreen;
-import me.zaydbille.pokedex.fragments.CaughtScreen;
-import me.zaydbille.pokedex.fragments.LocationScreen;
-import me.zaydbille.pokedex.fragments.MoveScreen;
-import me.zaydbille.pokedex.fragments.PokedexScreen;
-import me.zaydbille.pokedex.fragments.TeamScreen;
-import me.zaydbille.pokedex.fragments.TypeScreen;
 import me.zaydbille.pokedex.fragments.details.AbilityDetails;
 import me.zaydbille.pokedex.fragments.details.EggDetails;
 import me.zaydbille.pokedex.fragments.details.MainPokemonDetails;
@@ -42,9 +28,9 @@ import me.zaydbille.pokedex.fragments.details.SkillsDetails;
 
 public class DetailsPagerAdapter extends FragmentStatePagerAdapter {
 
-    int mNumOfTabs;
-    Context context;
-    Pokemon pokemon;
+    private int                             mNumOfTabs;
+    private Context                         context;
+    private Pokemon                         pokemon;
 
     public DetailsPagerAdapter(FragmentManager fm, int NumOfTabs, Context con, Pokemon p) {
         super(fm);
@@ -58,20 +44,20 @@ public class DetailsPagerAdapter extends FragmentStatePagerAdapter {
 
         switch (position) {
             case 0:
-                PokemonTypeDetails tab1 = PokemonTypeDetails.newInstance(pokemon, context);
-                return tab1;
+                PokemonTypeDetails tab = PokemonTypeDetails.newInstance(pokemon, context);
+                return tab;
             case 1:
-                SkillsDetails tab2 = SkillsDetails.newInstance(pokemon, context);
-                return tab2;
+                SkillsDetails tab1 = SkillsDetails.newInstance(pokemon, context);
+                return tab1;
             case 2:
-                MainPokemonDetails tab3 = MainPokemonDetails.newInstance(pokemon, context);
-                return tab3;
+                MainPokemonDetails tab2 = MainPokemonDetails.newInstance(pokemon, context);
+                return tab2;
             case 3:
+                AbilityDetails tab3 = AbilityDetails.newInstance(pokemon, context);
+                return tab3;
+            case 4:
                 AbilityDetails tab4 = AbilityDetails.newInstance(pokemon, context);
                 return tab4;
-            case 4:
-                EggDetails tab5 = new EggDetails();
-                return tab5;
             default:
                 return null;
         }
@@ -102,7 +88,6 @@ public class DetailsPagerAdapter extends FragmentStatePagerAdapter {
                 title = "Egg";
                 break;
         }
-
         return title;
     }
 }

@@ -1,13 +1,24 @@
+/*
+ -----------------------------------------------------------------------
+|                                                                       |
+|   Class:          AbilityUtils                                        |
+|   Description:    AbilityUtils class.                                 |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+|   Author:         Zayd-Waves                                          |
+|   Date:           5/31/2016                                           |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+ -----------------------------------------------------------------------
+*/
 package me.zaydbille.pokedex.utils;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import me.zaydbille.pokedex.data.Ability;
 
-/**
- * Created by Zayd on 6/20/16.
- */
 public final class AbilityUtils {
 
     public static List<Ability> sortAbilitiesByHidden(List<Ability> abilities) {
@@ -23,8 +34,6 @@ public final class AbilityUtils {
                 abilityList.add(abilities.get(i));
             }
         }
-
-
         return abilityList;
     }
 }

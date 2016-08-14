@@ -1,3 +1,18 @@
+/*
+ -----------------------------------------------------------------------
+|                                                                       |
+|   Class:          AbilityDetails                                      |
+|   Description:    AbilityDetails fragment.                            |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+|   Author:         Zayd-Waves                                          |
+|   Date:           5/31/2016                                           |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+ -----------------------------------------------------------------------
+*/
 package me.zaydbille.pokedex.fragments.details;
 
 import android.content.Context;
@@ -8,41 +23,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import java.util.HashMap;
 import java.util.List;
-
 import me.zaydbille.pokedex.R;
 import me.zaydbille.pokedex.data.Ability;
 import me.zaydbille.pokedex.data.Pokemon;
 import me.zaydbille.pokedex.utils.AbilityUtils;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link AbilityDetails.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link AbilityDetails#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class AbilityDetails extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    private OnFragmentInteractionListener mListener;
+    private OnFragmentInteractionListener   mListener;
 
     public AbilityDetails() {
-        // Required empty public constructor
+        /* Required empty public constructor. */
     }
 
-    private Context mContext;
-    private Pokemon pokemon;
+    private Context                             mContext;
+    private Pokemon                             pokemon;
 
     public static AbilityDetails newInstance(Pokemon p, Context context) {
         AbilityDetails fragment = new AbilityDetails();
@@ -54,14 +51,11 @@ public class AbilityDetails extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater,
+                             ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_ability, container, false);
 
@@ -87,7 +81,6 @@ public class AbilityDetails extends Fragment {
         abilityDescription3.setVisibility(View.GONE);
         abilityDescription4.setVisibility(View.GONE);
         abilityDescription5.setVisibility(View.GONE);
-
 
         HashMap<Integer, TextView> titleMap = new HashMap<Integer, TextView>();
         HashMap<Integer, TextView> descriptionMap = new HashMap<Integer, TextView>();
@@ -120,11 +113,9 @@ public class AbilityDetails extends Fragment {
                 descriptionMap.get(i).setVisibility(View.VISIBLE);
             }
         }
-
         return v;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -148,18 +139,13 @@ public class AbilityDetails extends Fragment {
         mListener = null;
     }
 
-    /**
+    /*
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
      * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+    */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 }

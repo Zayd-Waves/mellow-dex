@@ -13,13 +13,12 @@
 |                                                                       |
  -----------------------------------------------------------------------
 */
-
 package me.zaydbille.pokedex.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,15 +26,11 @@ import android.support.v7.widget.ActionMenuView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
+import android.widget.ListView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-
 import me.zaydbille.pokedex.R;
 import me.zaydbille.pokedex.adapters.PagerAdapter;
 import me.zaydbille.pokedex.data.Ability;
@@ -60,18 +55,15 @@ public class Dashboard extends AppCompatActivity implements
         TeamScreen.OnFragmentInteractionListener,
         TypeScreen.OnFragmentInteractionListener {
 
-    private static final int RESULT_SETTINGS = 1;
-    private Context mContext;
-
-    private int caughtRowTextColour;
-    private int rowColour;
+    private static final int                            RESULT_SETTINGS = 1;
+    private Context                                     mContext;
+    private int                                         caughtRowTextColour;
+    private int                                         rowColour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        /*
-            Refresh the theme after changing it in the settings.
-        */
+        /* Refresh the theme after changing it in the settings. */
         mContext = this;
         String theme = PreferencesManager.getTheme(mContext);
         switch (theme) {
@@ -97,26 +89,10 @@ public class Dashboard extends AppCompatActivity implements
         setContentView(R.layout.dashboard);
         overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 
-        /*
-            Retrieve all lists from the database and pass them over to the fragments.
-        */
-        DatabaseManager databaseAccess = DatabaseManager.getInstance(mContext);
-        databaseAccess.open();
-        List<Pokemon> pokemonList = databaseAccess.getPokemon();
-        List<Move> moveList = databaseAccess.getMoves();
-        List<Ability> abilityList = databaseAccess.getAbilities();
-        databaseAccess.close();
-        PreferencesManager.setAllPokemon(pokemonList);
-
-        /*
-            Set up the caught list. Only load default zero values if it's the first launch.
-        */
-        if(!PreferencesManager.getFirstTime(mContext).equals("nil")) {
-            HashSet<String> caughtSet = new HashSet<>();
-            PreferencesManager.saveAllCaughtPokemon(mContext, caughtSet);
-            PreferencesManager.setFirstTIme(mContext);
-        }
-
+        /* Retrieve all lists from the PreferencesManager and pass them over to the fragments. */
+        List<Pokemon> pokemonList = PreferencesManager.getAllPokemon();
+        List<Move> moveList = PreferencesManager.getAllMoves();
+        List<Ability> abilityList = PreferencesManager.getAllAbilities();
 
         /*
             Set the ViewPager's adapter (which initializes the fragments) and then
@@ -124,7 +100,7 @@ public class Dashboard extends AppCompatActivity implements
         */
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         final PagerAdapter adapter = new PagerAdapter ( getSupportFragmentManager(),
-                                                        6,
+                                                        5,
                                                         mContext,
                                                         pokemonList,
                                                         moveList,
@@ -134,10 +110,7 @@ public class Dashboard extends AppCompatActivity implements
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(2);
 
-
-        /*
-            Set up our custom ActionMenuView.
-        */
+        /* Set up our custom ActionMenuView. */
         Toolbar t = (Toolbar) findViewById(R.id.tToolbar);
         ActionMenuView amvMenu = (ActionMenuView) t.findViewById(R.id.amvMenu);
         amvMenu.setOnMenuItemClickListener(new ActionMenuView.OnMenuItemClickListener() {
@@ -183,19 +156,15 @@ public class Dashboard extends AppCompatActivity implements
         /* Empty for now. */
     }
 
-    /*
-        The Caught Screen's onFragmentInteraction callback
-     */
+    /* The Caught Screen's onFragmentInteraction callback. */
     public void onFragmentInteraction(int pokemonId, String n){
         Intent intent = new Intent(mContext, PokemonDetails.class);
         intent.putExtra("pokemonId", pokemonId);
         startActivity(intent);
     }
 
-    /*
-        The Pokedex Screen's onFragmentInteraction callback.
-    */
-    public void onFragmentInteraction(int pokemonId){
+    /* The Pokedex Screen's onFragmentInteraction callback. */
+    public void onFragmentInteraction(int pokemonId, int position){
         Intent intent = new Intent(mContext, PokemonDetails.class);
         intent.putExtra("pokemonId", pokemonId);
         startActivity(intent);

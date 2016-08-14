@@ -1,8 +1,8 @@
 /*
  -----------------------------------------------------------------------
 |                                                                       |
-|   Class:          PokedexListAdapter                                  |
-|   Description:    Custom list adapter for the PokedexScreen's         |
+|   Class:          MoveListAdapter                                     |
+|   Description:    Custom list adapter for the MoveScreen's            |
 |                   ListView.                                           |
 |                                                                       |
 |                                                                       |
@@ -13,7 +13,6 @@
 |                                                                       |
  -----------------------------------------------------------------------
 */
-
 package me.zaydbille.pokedex.adapters;
 
 import android.app.Activity;
@@ -25,20 +24,19 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
 import me.zaydbille.pokedex.R;
 import me.zaydbille.pokedex.data.Move;
-import me.zaydbille.pokedex.data.Pokemon;
+import me.zaydbille.pokedex.utils.TypeUtils;
 
 public class MoveListAdapter extends ArrayAdapter<Move> implements android.widget.Filterable {
 
-    Context context;
-    static int customLayout = R.layout.move_list_row;
-    List<Move> data = null;
-    List<Move> fullList = null;
-    private MoveFilter mFilter = new MoveFilter();
+    private Context                             context;
+    private static int                          customLayout = R.layout.move_list_row;
+    private List<Move>                          data = null;
+    private List<Move>                          fullList = null;
+    private MoveFilter                          mFilter = new MoveFilter();
 
     public MoveListAdapter(Context context, List<Move> data) {
         super(context, customLayout, data);
@@ -55,10 +53,9 @@ public class MoveListAdapter extends ArrayAdapter<Move> implements android.widge
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View row = convertView;
-        MoveHolder holder = null;
+        MoveHolder holder;
 
-        if(row == null)
-        {
+        if(row == null) {
             LayoutInflater inflater = ((Activity)context).getLayoutInflater();
             row = inflater.inflate(customLayout, parent, false);
 
@@ -68,23 +65,18 @@ public class MoveListAdapter extends ArrayAdapter<Move> implements android.widge
             holder.moveType = (TextView)row.findViewById(R.id.type);
 
             row.setTag(holder);
-        }
-        else
-        {
+        } else {
             holder = (MoveHolder) row.getTag();
         }
 
         Move move = data.get(position);
         holder.moveName.setText(move.getName());
         holder.moveDescription.setText(move.getDescription());
-
-
-
         holder.moveType.setText(move.getType().toUpperCase());
         holder.moveType.setTextColor(ContextCompat.getColor(context, android.R.color.white));
 
         /* Get the appropriate colour for the type. */
-        int colourOne = getTypeColour(move.getType());
+        int colourOne = TypeUtils.getTypeColour(move.getType(), context);
         holder.moveType.setBackgroundColor(colourOne);
 
         return row;
@@ -94,50 +86,6 @@ public class MoveListAdapter extends ArrayAdapter<Move> implements android.widge
         TextView moveName;
         TextView moveDescription;
         TextView moveType;
-    }
-
-    private int getTypeColour(String type) {
-        int c = 0;
-
-        if (type.toLowerCase().equals("normal")) {
-            c = ContextCompat.getColor(context, R.color.normal);
-        } else if (type.toLowerCase().equals("fire")) {
-            c = ContextCompat.getColor(context, R.color.fire);
-        } else if (type.toLowerCase().equals("fighting")) {
-            c = ContextCompat.getColor(context, R.color.fighting);
-        } else if (type.toLowerCase().equals("water")) {
-            c = ContextCompat.getColor(context, R.color.water);
-        } else if (type.toLowerCase().equals("flying")) {
-            c = ContextCompat.getColor(context, R.color.flying);
-        } else if (type.toLowerCase().equals("grass")) {
-            c = ContextCompat.getColor(context, R.color.grass);
-        } else if (type.toLowerCase().equals("poison")) {
-            c = ContextCompat.getColor(context, R.color.poison);
-        } else if (type.toLowerCase().equals("electric")) {
-            c = ContextCompat.getColor(context, R.color.electric);
-        } else if (type.toLowerCase().equals("ground")) {
-            c = ContextCompat.getColor(context, R.color.ground);
-        } else if (type.toLowerCase().equals("psychic")) {
-            c = ContextCompat.getColor(context, R.color.psychic);
-        } else if (type.toLowerCase().equals("rock")) {
-            c = ContextCompat.getColor(context, R.color.rock);
-        } else if (type.toLowerCase().equals("ice")) {
-            c = ContextCompat.getColor(context, R.color.ice);
-        } else if (type.toLowerCase().equals("bug")) {
-            c = ContextCompat.getColor(context, R.color.bug);
-        } else if (type.toLowerCase().equals("dragon")) {
-            c = ContextCompat.getColor(context, R.color.dragon);
-        } else if (type.toLowerCase().equals("ghost")) {
-            c = ContextCompat.getColor(context, R.color.ghost);
-        } else if (type.toLowerCase().equals("dark")) {
-            c = ContextCompat.getColor(context, R.color.dark);
-        } else if (type.toLowerCase().equals("steel")) {
-            c = ContextCompat.getColor(context, R.color.steel);
-        } else if (type.toLowerCase().equals("fairy")) {
-            c = ContextCompat.getColor(context, R.color.fairy);
-        }
-
-        return c;
     }
 
     private class MoveFilter extends Filter {
@@ -196,5 +144,4 @@ public class MoveListAdapter extends ArrayAdapter<Move> implements android.widge
         }
         return mFilter;
     }
-
 }

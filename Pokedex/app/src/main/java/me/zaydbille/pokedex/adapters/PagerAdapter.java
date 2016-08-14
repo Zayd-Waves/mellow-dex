@@ -13,7 +13,6 @@
 |                                                                       |
  -----------------------------------------------------------------------
 */
-
 package me.zaydbille.pokedex.adapters;
 
 import android.content.Context;
@@ -21,13 +20,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import java.util.List;
-
 import me.zaydbille.pokedex.data.Ability;
 import me.zaydbille.pokedex.data.Move;
 import me.zaydbille.pokedex.data.Pokemon;
 import me.zaydbille.pokedex.fragments.AbilityScreen;
 import me.zaydbille.pokedex.fragments.CaughtScreen;
-import me.zaydbille.pokedex.fragments.LocationScreen;
 import me.zaydbille.pokedex.fragments.MoveScreen;
 import me.zaydbille.pokedex.fragments.PokedexScreen;
 import me.zaydbille.pokedex.fragments.TeamScreen;
@@ -35,16 +32,15 @@ import me.zaydbille.pokedex.fragments.TypeScreen;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
 
-    int mNumOfTabs;
-    Context context;
+    private int                             mNumOfTabs;
+    private Context                         context;
 
     /* Pokemon Data */
-    List<Pokemon> pokemon;
-    List<Move> moves;
-    List<Ability> abilities;
-
-    int caughtRowTextColour;
-    int rowColour;
+    private List<Pokemon>                   pokemon;
+    private List<Move>                      moves;
+    private List<Ability>                   abilities;
+    private int                             caughtRowTextColour;
+    private int                             rowColour;
 
     public PagerAdapter(FragmentManager fm,
                         int NumOfTabs,
@@ -80,7 +76,8 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
             case 3:
                 AbilityScreen tab4 = AbilityScreen.newInstance(context, abilities);
                 return tab4;
-            /*case 4:
+            /*
+            case 4:
 
                 LocationScreen tab5 = new LocationScreen();
                 return tab5;
@@ -88,9 +85,9 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
             case 4:
                 CaughtScreen tab6 = CaughtScreen.newInstance(context, pokemon, caughtRowTextColour, rowColour);
                 return tab6;
-            case 5:
+            /*case 5:
                 TeamScreen tab7 = TeamScreen.newInstance(context);
-                return tab7;
+                return tab7;*/
             default:
                 return null;
         }

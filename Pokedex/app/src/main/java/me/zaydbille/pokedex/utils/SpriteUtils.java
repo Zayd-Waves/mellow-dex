@@ -1,17 +1,2491 @@
+/*
+ -----------------------------------------------------------------------
+|                                                                       |
+|   Class:          SpriteUtils                                         |
+|   Description:    SpriteUtils class.                                  |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+|   Author:         Zayd-Waves                                          |
+|   Date:           5/31/2016                                           |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+ -----------------------------------------------------------------------
+*/
 package me.zaydbille.pokedex.utils;
 
 import me.zaydbille.pokedex.R;
 
-/**
- * Created by Zayd on 6/19/16.
- */
 public final class SpriteUtils {
 
-    public static int getSprite(int pokemonId, String rawName){ return R.drawable.p0; }
-    public static int getShinySprite(int pokemonId, String rawName){ return R.drawable.p0; }
-    /*
     public static int getSprite(int pokemonId, String rawName) {
-        if (pokemonId == 1) { return R.drawable.p1; }
+        int icon = 0;
+
+        switch (rawName.toLowerCase()) {
+            case "abomasnow-mega":
+                icon = R.drawable.abomasnow_mega;
+                break;
+            case "abomasnow":
+                icon = R.drawable.abomasnow;
+                break;
+            case "abra":
+                icon = R.drawable.abra;
+                break;
+            case "absol-mega":
+                icon = R.drawable.absol_mega;
+                break;
+            case "absol":
+                icon = R.drawable.absol;
+                break;
+            case "accelgor":
+                icon = R.drawable.accelgor;
+                break;
+            case "aegislash-blade":
+                icon = R.drawable.aegislash_blade;
+                break;
+            case "aegislash":
+                icon = R.drawable.aegislash;
+                break;
+            case "aerodactyl-mega":
+                icon = R.drawable.aerodactyl_mega;
+                break;
+            case "aerodactyl":
+                icon = R.drawable.aerodactyl;
+                break;
+            case "aggron-mega":
+                icon = R.drawable.aggron_mega;
+                break;
+            case "aggron":
+                icon = R.drawable.aggron;
+                break;
+            case "aipom":
+                icon = R.drawable.aipom;
+                break;
+            case "alakazam-mega":
+                icon = R.drawable.alakazam_mega;
+                break;
+            case "alakazam":
+                icon = R.drawable.alakazam;
+                break;
+            case "alomomola":
+                icon = R.drawable.alomomola;
+                break;
+            case "altaria":
+                icon = R.drawable.altaria;
+                break;
+            case "amaura":
+                icon = R.drawable.amaura;
+                break;
+            case "ambipom":
+                icon = R.drawable.ambipom;
+                break;
+            case "amoonguss":
+                icon = R.drawable.amoonguss;
+                break;
+            case "ampharos-mega":
+                icon = R.drawable.ampharos_mega;
+                break;
+            case "ampharos":
+                icon = R.drawable.ampharos;
+                break;
+            case "anorith":
+                icon = R.drawable.anorith;
+                break;
+            case "arbok":
+                icon = R.drawable.arbok;
+                break;
+            case "arcanine":
+                icon = R.drawable.arcanine;
+                break;
+            case "arceus":
+                icon = R.drawable.arceus;
+                break;
+            case "archen":
+                icon = R.drawable.archen;
+                break;
+            case "archeops":
+                icon = R.drawable.archeops;
+                break;
+            case "ariados":
+                icon = R.drawable.ariados;
+                break;
+            case "armaldo":
+                icon = R.drawable.armaldo;
+                break;
+            case "aromatisse":
+                icon = R.drawable.aromatisse;
+                break;
+            case "aron":
+                icon = R.drawable.aron;
+                break;
+            case "articuno":
+                icon = R.drawable.articuno;
+                break;
+            case "audino":
+                icon = R.drawable.audino;
+                break;
+            case "aurorus":
+                icon = R.drawable.aurorus;
+                break;
+            case "avalugg":
+                icon = R.drawable.avalugg;
+                break;
+            case "axew":
+                icon = R.drawable.axew;
+                break;
+            case "azelf":
+                icon = R.drawable.azelf;
+                break;
+            case "azumarill":
+                icon = R.drawable.azumarill;
+                break;
+            case "azurill":
+                icon = R.drawable.azurill;
+                break;
+            case "bagon":
+                icon = R.drawable.bagon;
+                break;
+            case "baltoy":
+                icon = R.drawable.baltoy;
+                break;
+            case "banette-mega":
+                icon = R.drawable.banette_mega;
+                break;
+            case "banette":
+                icon = R.drawable.banette;
+                break;
+            case "barbaracle":
+                icon = R.drawable.barbaracle;
+                break;
+            case "barboach":
+                icon = R.drawable.barboach;
+                break;
+            case "basculin":
+                icon = R.drawable.basculin;
+                break;
+            case "bastiodon":
+                icon = R.drawable.bastiodon;
+                break;
+            case "bayleef":
+                icon = R.drawable.bayleef;
+                break;
+            case "beartic":
+                icon = R.drawable.beartic;
+                break;
+            case "beautifly":
+                icon = R.drawable.beautifly;
+                break;
+            case "beedrill":
+                icon = R.drawable.beedrill;
+                break;
+            case "beheeyem":
+                icon = R.drawable.beheeyem;
+                break;
+            case "beldum":
+                icon = R.drawable.beldum;
+                break;
+            case "bellossom":
+                icon = R.drawable.bellossom;
+                break;
+            case "bellsprout":
+                icon = R.drawable.bellsprout;
+                break;
+            case "bergmite":
+                icon = R.drawable.bergmite;
+                break;
+            case "bibarel":
+                icon = R.drawable.bibarel;
+                break;
+            case "bidoof":
+                icon = R.drawable.bidoof;
+                break;
+            case "binacle":
+                icon = R.drawable.binacle;
+                break;
+            case "bisharp":
+                icon = R.drawable.bisharp;
+                break;
+            case "blastoise-mega":
+                icon = R.drawable.blastoise_mega;
+                break;
+            case "blastoise":
+                icon = R.drawable.blastoise;
+                break;
+            case "blaziken-mega":
+                icon = R.drawable.blaziken_mega;
+                break;
+            case "blaziken":
+                icon = R.drawable.blaziken;
+                break;
+            case "blissey":
+                icon = R.drawable.blissey;
+                break;
+            case "blitzle":
+                icon = R.drawable.blitzle;
+                break;
+            case "boldore":
+                icon = R.drawable.boldore;
+                break;
+            case "bonsly":
+                icon = R.drawable.bonsly;
+                break;
+            case "bouffalant":
+                icon = R.drawable.bouffalant;
+                break;
+            case "braixen":
+                icon = R.drawable.braixen;
+                break;
+            case "braviary":
+                icon = R.drawable.braviary;
+                break;
+            case "breloom":
+                icon = R.drawable.breloom;
+                break;
+            case "bronzong":
+                icon = R.drawable.bronzong;
+                break;
+            case "bronzor":
+                icon = R.drawable.bronzor;
+                break;
+            case "budew":
+                icon = R.drawable.budew;
+                break;
+            case "buizel":
+                icon = R.drawable.buizel;
+                break;
+            case "bulbasaur":
+                icon = R.drawable.bulbasaur;
+                break;
+            case "buneary":
+                icon = R.drawable.buneary;
+                break;
+            case "bunnelby":
+                icon = R.drawable.bunnelby;
+                break;
+            case "burmy-sandy":
+                icon = R.drawable.burmy_sandy;
+                break;
+            case "burmy-trash":
+                icon = R.drawable.burmy_trash;
+                break;
+            case "burmy":
+                icon = R.drawable.burmy;
+                break;
+            case "butterfree":
+                icon = R.drawable.butterfree;
+                break;
+            case "cacnea":
+                icon = R.drawable.cacnea;
+                break;
+            case "cacturne":
+                icon = R.drawable.cacturne;
+                break;
+            case "camerupt":
+                icon = R.drawable.camerupt;
+                break;
+            case "carbink":
+                icon = R.drawable.carbink;
+                break;
+            case "carnivine":
+                icon = R.drawable.carnivine;
+                break;
+            case "carracosta":
+                icon = R.drawable.carracosta;
+                break;
+            case "carvanha":
+                icon = R.drawable.carvanha;
+                break;
+            case "cascoon":
+                icon = R.drawable.cascoon;
+                break;
+            case "castform":
+                icon = R.drawable.castform;
+                break;
+            case "caterpie":
+                icon = R.drawable.caterpie;
+                break;
+            case "celebi":
+                icon = R.drawable.celebi;
+                break;
+            case "chandelure":
+                icon = R.drawable.chandelure;
+                break;
+            case "chansey":
+                icon = R.drawable.chansey;
+                break;
+            case "charizard-megax":
+                icon = R.drawable.charizard_megax;
+                break;
+            case "charizard-megay":
+                icon = R.drawable.charizard_megay;
+                break;
+            case "charizard":
+                icon = R.drawable.charizard;
+                break;
+            case "charmander":
+                icon = R.drawable.charmander;
+                break;
+            case "charmeleon":
+                icon = R.drawable.charmeleon;
+                break;
+            case "chatot":
+                icon = R.drawable.chatot;
+                break;
+            case "cherrim":
+                icon = R.drawable.cherrim;
+                break;
+            case "cherubi":
+                icon = R.drawable.cherubi;
+                break;
+            case "chesnaught":
+                icon = R.drawable.chesnaught;
+                break;
+            case "chespin":
+                icon = R.drawable.chespin;
+                break;
+            case "chikorita":
+                icon = R.drawable.chikorita;
+                break;
+            case "chimchar":
+                icon = R.drawable.chimchar;
+                break;
+            case "chimecho":
+                icon = R.drawable.chimecho;
+                break;
+            case "chinchou":
+                icon = R.drawable.chinchou;
+                break;
+            case "chingling":
+                icon = R.drawable.chingling;
+                break;
+            case "cinccino":
+                icon = R.drawable.cinccino;
+                break;
+            case "clamperl":
+                icon = R.drawable.clamperl;
+                break;
+            case "clauncher":
+                icon = R.drawable.clauncher;
+                break;
+            case "clawitzer":
+                icon = R.drawable.clawitzer;
+                break;
+            case "claydol":
+                icon = R.drawable.claydol;
+                break;
+            case "clefable":
+                icon = R.drawable.clefable;
+                break;
+            case "clefairy":
+                icon = R.drawable.clefairy;
+                break;
+            case "cleffa":
+                icon = R.drawable.cleffa;
+                break;
+            case "cloyster":
+                icon = R.drawable.cloyster;
+                break;
+            case "cobalion":
+                icon = R.drawable.cobalion;
+                break;
+            case "cofagrigus":
+                icon = R.drawable.cofagrigus;
+                break;
+            case "combee":
+                icon = R.drawable.combee;
+                break;
+            case "combusken":
+                icon = R.drawable.combusken;
+                break;
+            case "conkeldurr":
+                icon = R.drawable.conkeldurr;
+                break;
+            case "corphish":
+                icon = R.drawable.corphish;
+                break;
+            case "corsola":
+                icon = R.drawable.corsola;
+                break;
+            case "cottonee":
+                icon = R.drawable.cottonee;
+                break;
+            case "cradily":
+                icon = R.drawable.cradily;
+                break;
+            case "cranidos":
+                icon = R.drawable.cranidos;
+                break;
+            case "crawdaunt":
+                icon = R.drawable.crawdaunt;
+                break;
+            case "cresselia":
+                icon = R.drawable.cresselia;
+                break;
+            case "croagunk":
+                icon = R.drawable.croagunk;
+                break;
+            case "crobat":
+                icon = R.drawable.crobat;
+                break;
+            case "croconaw":
+                icon = R.drawable.croconaw;
+                break;
+            case "crustle":
+                icon = R.drawable.crustle;
+                break;
+            case "cryogonal":
+                icon = R.drawable.cryogonal;
+                break;
+            case "cubchoo":
+                icon = R.drawable.cubchoo;
+                break;
+            case "cubone":
+                icon = R.drawable.cubone;
+                break;
+            case "cyndaquil":
+                icon = R.drawable.cyndaquil;
+                break;
+            case "darkrai":
+                icon = R.drawable.darkrai;
+                break;
+            case "darmanitan-zen":
+                icon = R.drawable.darmanitan_zen;
+                break;
+            case "darmanitan":
+                icon = R.drawable.darmanitan;
+                break;
+            case "darumaka":
+                icon = R.drawable.darumaka;
+                break;
+            case "dedenne":
+                icon = R.drawable.dedenne;
+                break;
+            case "deerling-autumn":
+                icon = R.drawable.deerling_autumn;
+                break;
+            case "deerling":
+                icon = R.drawable.deerling;
+                break;
+            case "deino":
+                icon = R.drawable.deino;
+                break;
+            case "delcatty":
+                icon = R.drawable.delcatty;
+                break;
+            case "delibird":
+                icon = R.drawable.delibird;
+                break;
+            case "delphox":
+                icon = R.drawable.delphox;
+                break;
+            case "deoxys-attack":
+                icon = R.drawable.deoxys_attack;
+                break;
+            case "deoxys-defense":
+                icon = R.drawable.deoxys_defense;
+                break;
+            case "deoxys-speed":
+                icon = R.drawable.deoxys_speed;
+                break;
+            case "deoxys":
+                icon = R.drawable.deoxys;
+                break;
+            case "dewgong":
+                icon = R.drawable.dewgong;
+                break;
+            case "dewott":
+                icon = R.drawable.dewott;
+                break;
+            case "dialga":
+                icon = R.drawable.dialga;
+                break;
+            case "diancie":
+                icon = R.drawable.diancie;
+                break;
+            case "diggersby":
+                icon = R.drawable.diggersby;
+                break;
+            case "diglett":
+                icon = R.drawable.diglett;
+                break;
+            case "ditto":
+                icon = R.drawable.ditto;
+                break;
+            case "dodrio":
+                icon = R.drawable.dodrio;
+                break;
+            case "doduo":
+                icon = R.drawable.doduo;
+                break;
+            case "donphan":
+                icon = R.drawable.donphan;
+                break;
+            case "doublade":
+                icon = R.drawable.doublade;
+                break;
+            case "dragalge":
+                icon = R.drawable.dragalge;
+                break;
+            case "dragonair":
+                icon = R.drawable.dragonair;
+                break;
+            case "dragonite":
+                icon = R.drawable.dragonite;
+                break;
+            case "drapion":
+                icon = R.drawable.drapion;
+                break;
+            case "dratini":
+                icon = R.drawable.dratini;
+                break;
+            case "drifblim":
+                icon = R.drawable.drifblim;
+                break;
+            case "drifloon":
+                icon = R.drawable.drifloon;
+                break;
+            case "drilbur":
+                icon = R.drawable.drilbur;
+                break;
+            case "drowzee":
+                icon = R.drawable.drowzee;
+                break;
+            case "druddigon":
+                icon = R.drawable.druddigon;
+                break;
+            case "ducklett":
+                icon = R.drawable.ducklett;
+                break;
+            case "dugtrio":
+                icon = R.drawable.dugtrio;
+                break;
+            case "dunsparce":
+                icon = R.drawable.dunsparce;
+                break;
+            case "duosion":
+                icon = R.drawable.duosion;
+                break;
+            case "durant":
+                icon = R.drawable.durant;
+                break;
+            case "dusclops":
+                icon = R.drawable.dusclops;
+                break;
+            case "dusknoir":
+                icon = R.drawable.dusknoir;
+                break;
+            case "duskull":
+                icon = R.drawable.duskull;
+                break;
+            case "dustox":
+                icon = R.drawable.dustox;
+                break;
+            case "dwebble":
+                icon = R.drawable.dwebble;
+                break;
+            case "eelektrik":
+                icon = R.drawable.eelektrik;
+                break;
+            case "eelektross":
+                icon = R.drawable.eelektross;
+                break;
+            case "eevee":
+                icon = R.drawable.eevee;
+                break;
+            case "ekans":
+                icon = R.drawable.ekans;
+                break;
+            case "electabuzz":
+                icon = R.drawable.electabuzz;
+                break;
+            case "electivire":
+                icon = R.drawable.electivire;
+                break;
+            case "electrike":
+                icon = R.drawable.electrike;
+                break;
+            case "electrode":
+                icon = R.drawable.electrode;
+                break;
+            case "elekid":
+                icon = R.drawable.elekid;
+                break;
+            case "elgyem":
+                icon = R.drawable.elgyem;
+                break;
+            case "emboar":
+                icon = R.drawable.emboar;
+                break;
+            case "emolga":
+                icon = R.drawable.emolga;
+                break;
+            case "empoleon":
+                icon = R.drawable.empoleon;
+                break;
+            case "entei":
+                icon = R.drawable.entei;
+                break;
+            case "escavalier":
+                icon = R.drawable.escavalier;
+                break;
+            case "espeon":
+                icon = R.drawable.espeon;
+                break;
+            case "espurr":
+                icon = R.drawable.espurr;
+                break;
+            case "excadrill":
+                icon = R.drawable.excadrill;
+                break;
+            case "exeggcute":
+                icon = R.drawable.exeggcute;
+                break;
+            case "exeggutor":
+                icon = R.drawable.exeggutor;
+                break;
+            case "exploud":
+                icon = R.drawable.exploud;
+                break;
+            case "farfetchd":
+                icon = R.drawable.farfetchd;
+                break;
+            case "fearow":
+                icon = R.drawable.fearow;
+                break;
+            case "feebas":
+                icon = R.drawable.feebas;
+                break;
+            case "fennekin":
+                icon = R.drawable.fennekin;
+                break;
+            case "feraligatr":
+                icon = R.drawable.feraligatr;
+                break;
+            case "ferroseed":
+                icon = R.drawable.ferroseed;
+                break;
+            case "ferrothorn":
+                icon = R.drawable.ferrothorn;
+                break;
+            case "finneon":
+                icon = R.drawable.finneon;
+                break;
+            case "flaaffy":
+                icon = R.drawable.flaaffy;
+                break;
+            case "flabebe-white":
+                icon = R.drawable.flabebe_white;
+                break;
+            case "flabebe":
+                icon = R.drawable.flabebe;
+                break;
+            case "flareon":
+                icon = R.drawable.flareon;
+                break;
+            case "fletchinder":
+                icon = R.drawable.fletchinder;
+                break;
+            case "fletchling":
+                icon = R.drawable.fletchling;
+                break;
+            case "floatzel":
+                icon = R.drawable.floatzel;
+                break;
+            case "floette-eternal":
+                icon = R.drawable.floette_eternal;
+                break;
+            case "floette-white":
+                icon = R.drawable.floette_white;
+                break;
+            case "floette":
+                icon = R.drawable.floette;
+                break;
+            case "florges-white":
+                icon = R.drawable.florges_white;
+                break;
+            case "florges":
+                icon = R.drawable.florges;
+                break;
+            case "flygon":
+                icon = R.drawable.flygon;
+                break;
+            case "foongus":
+                icon = R.drawable.foongus;
+                break;
+            case "forretress":
+                icon = R.drawable.forretress;
+                break;
+            case "fraxure":
+                icon = R.drawable.fraxure;
+                break;
+            case "frillish":
+                icon = R.drawable.frillish;
+                break;
+            case "froakie":
+                icon = R.drawable.froakie;
+                break;
+            case "frogadier":
+                icon = R.drawable.frogadier;
+                break;
+            case "froslass":
+                icon = R.drawable.froslass;
+                break;
+            case "furfrou":
+                icon = R.drawable.furfrou;
+                break;
+            case "furret":
+                icon = R.drawable.furret;
+                break;
+            case "gabite":
+                icon = R.drawable.gabite;
+                break;
+            case "gallade":
+                icon = R.drawable.gallade;
+                break;
+            case "galvantula":
+                icon = R.drawable.galvantula;
+                break;
+            case "garbodor":
+                icon = R.drawable.garbodor;
+                break;
+            case "garchomp-mega":
+                icon = R.drawable.garchomp_mega;
+                break;
+            case "garchomp":
+                icon = R.drawable.garchomp;
+                break;
+            case "gardevoir-mega":
+                icon = R.drawable.gardevoir_mega;
+                break;
+            case "gardevoir":
+                icon = R.drawable.gardevoir;
+                break;
+            case "gastly":
+                icon = R.drawable.gastly;
+                break;
+            case "gastrodon-east":
+                icon = R.drawable.gastrodon_east;
+                break;
+            case "gastrodon":
+                icon = R.drawable.gastrodon;
+                break;
+            case "genesect":
+                icon = R.drawable.genesect;
+                break;
+            case "gengar-mega":
+                icon = R.drawable.gengar_mega;
+                break;
+            case "gengar":
+                icon = R.drawable.gengar;
+                break;
+            case "geodude":
+                icon = R.drawable.geodude;
+                break;
+            case "gible":
+                icon = R.drawable.gible;
+                break;
+            case "gigalith":
+                icon = R.drawable.gigalith;
+                break;
+            case "girafarig":
+                icon = R.drawable.girafarig;
+                break;
+            case "giratina-origin":
+                icon = R.drawable.giratina_origin;
+                break;
+            case "giratina":
+                icon = R.drawable.giratina;
+                break;
+            case "glaceon":
+                icon = R.drawable.glaceon;
+                break;
+            case "glalie":
+                icon = R.drawable.glalie;
+                break;
+            case "glameow":
+                icon = R.drawable.glameow;
+                break;
+            case "gligar":
+                icon = R.drawable.gligar;
+                break;
+            case "gliscor":
+                icon = R.drawable.gliscor;
+                break;
+            case "gloom":
+                icon = R.drawable.gloom;
+                break;
+            case "gogoat":
+                icon = R.drawable.gogoat;
+                break;
+            case "golbat":
+                icon = R.drawable.golbat;
+                break;
+            case "goldeen":
+                icon = R.drawable.goldeen;
+                break;
+            case "golduck":
+                icon = R.drawable.golduck;
+                break;
+            case "golem":
+                icon = R.drawable.golem;
+                break;
+            case "golett":
+                icon = R.drawable.golett;
+                break;
+            case "golurk":
+                icon = R.drawable.golurk;
+                break;
+            case "goodra":
+                icon = R.drawable.goodra;
+                break;
+            case "goomy":
+                icon = R.drawable.goomy;
+                break;
+            case "gorebyss":
+                icon = R.drawable.gorebyss;
+                break;
+            case "gothita":
+                icon = R.drawable.gothita;
+                break;
+            case "gothitelle":
+                icon = R.drawable.gothitelle;
+                break;
+            case "gothorita":
+                icon = R.drawable.gothorita;
+                break;
+            case "gourgeist-large":
+                icon = R.drawable.gourgeist_large;
+                break;
+            case "gourgeist-small":
+                icon = R.drawable.gourgeist_small;
+                break;
+            case "gourgeist-super":
+                icon = R.drawable.gourgeist_super;
+                break;
+            case "gourgeist":
+                icon = R.drawable.gourgeist;
+                break;
+            case "granbull":
+                icon = R.drawable.granbull;
+                break;
+            case "graveler":
+                icon = R.drawable.graveler;
+                break;
+            case "greninja":
+                icon = R.drawable.greninja;
+                break;
+            case "grimer":
+                icon = R.drawable.grimer;
+                break;
+            case "grotle":
+                icon = R.drawable.grotle;
+                break;
+            case "groudon":
+                icon = R.drawable.groudon;
+                break;
+            case "grovyle":
+                icon = R.drawable.grovyle;
+                break;
+            case "growlithe":
+                icon = R.drawable.growlithe;
+                break;
+            case "grumpig":
+                icon = R.drawable.grumpig;
+                break;
+            case "gulpin":
+                icon = R.drawable.gulpin;
+                break;
+            case "gurdurr":
+                icon = R.drawable.gurdurr;
+                break;
+            case "gyarados-mega":
+                icon = R.drawable.gyarados_mega;
+                break;
+            case "gyarados":
+                icon = R.drawable.gyarados;
+                break;
+            case "happiny":
+                icon = R.drawable.happiny;
+                break;
+            case "hariyama":
+                icon = R.drawable.hariyama;
+                break;
+            case "haunter":
+                icon = R.drawable.haunter;
+                break;
+            case "hawlucha":
+                icon = R.drawable.hawlucha;
+                break;
+            case "haxorus":
+                icon = R.drawable.haxorus;
+                break;
+            case "heatmor":
+                icon = R.drawable.heatmor;
+                break;
+            case "heatran":
+                icon = R.drawable.heatran;
+                break;
+            case "heliolisk":
+                icon = R.drawable.heliolisk;
+                break;
+            case "helioptile":
+                icon = R.drawable.helioptile;
+                break;
+            case "heracross-mega":
+                icon = R.drawable.heracross_mega;
+                break;
+            case "heracross":
+                icon = R.drawable.heracross;
+                break;
+            case "herdier":
+                icon = R.drawable.herdier;
+                break;
+            case "hippopotas":
+                icon = R.drawable.hippopotas;
+                break;
+            case "hippowdon":
+                icon = R.drawable.hippowdon;
+                break;
+            case "hitmonchan":
+                icon = R.drawable.hitmonchan;
+                break;
+            case "hitmonlee":
+                icon = R.drawable.hitmonlee;
+                break;
+            case "hitmontop":
+                icon = R.drawable.hitmontop;
+                break;
+            case "ho-oh":
+                icon = R.drawable.ho_oh;
+                break;
+            case "honchkrow":
+                icon = R.drawable.honchkrow;
+                break;
+            case "honedge":
+                icon = R.drawable.honedge;
+                break;
+            case "hoopa":
+                icon = R.drawable.hoopa;
+                break;
+            case "hoothoot":
+                icon = R.drawable.hoothoot;
+                break;
+            case "hoppip":
+                icon = R.drawable.hoppip;
+                break;
+            case "horsea":
+                icon = R.drawable.horsea;
+                break;
+            case "houndoom-mega":
+                icon = R.drawable.houndoom_mega;
+                break;
+            case "houndoom":
+                icon = R.drawable.houndoom;
+                break;
+            case "houndour":
+                icon = R.drawable.houndour;
+                break;
+            case "huntail":
+                icon = R.drawable.huntail;
+                break;
+            case "hydreigon":
+                icon = R.drawable.hydreigon;
+                break;
+            case "hypno":
+                icon = R.drawable.hypno;
+                break;
+            case "igglybuff":
+                icon = R.drawable.igglybuff;
+                break;
+            case "illumise":
+                icon = R.drawable.illumise;
+                break;
+            case "infernape":
+                icon = R.drawable.infernape;
+                break;
+            case "inkay":
+                icon = R.drawable.inkay;
+                break;
+            case "ivysaur":
+                icon = R.drawable.ivysaur;
+                break;
+            case "jellicent":
+                icon = R.drawable.jellicent;
+                break;
+            case "jigglypuff":
+                icon = R.drawable.jigglypuff;
+                break;
+            case "jirachi":
+                icon = R.drawable.jirachi;
+                break;
+            case "jolteon":
+                icon = R.drawable.jolteon;
+                break;
+            case "joltik":
+                icon = R.drawable.joltik;
+                break;
+            case "jumpluff":
+                icon = R.drawable.jumpluff;
+                break;
+            case "jynx":
+                icon = R.drawable.jynx;
+                break;
+            case "kabuto":
+                icon = R.drawable.kabuto;
+                break;
+            case "kabutops":
+                icon = R.drawable.kabutops;
+                break;
+            case "kadabra":
+                icon = R.drawable.kadabra;
+                break;
+            case "kakuna":
+                icon = R.drawable.kakuna;
+                break;
+            case "kangaskhan-mega":
+                icon = R.drawable.kangaskhan_mega;
+                break;
+            case "kangaskhan":
+                icon = R.drawable.kangaskhan;
+                break;
+            case "karrablast":
+                icon = R.drawable.karrablast;
+                break;
+            case "kecleon":
+                icon = R.drawable.kecleon;
+                break;
+            case "keldeo-resolute":
+                icon = R.drawable.keldeo_resolute;
+                break;
+            case "keldeo":
+                icon = R.drawable.keldeo;
+                break;
+            case "kingdra":
+                icon = R.drawable.kingdra;
+                break;
+            case "kingler":
+                icon = R.drawable.kingler;
+                break;
+            case "kirlia":
+                icon = R.drawable.kirlia;
+                break;
+            case "klang":
+                icon = R.drawable.klang;
+                break;
+            case "klefki":
+                icon = R.drawable.klefki;
+                break;
+            case "klink":
+                icon = R.drawable.klink;
+                break;
+            case "klinklang":
+                icon = R.drawable.klinklang;
+                break;
+            case "koffing":
+                icon = R.drawable.koffing;
+                break;
+            case "krabby":
+                icon = R.drawable.krabby;
+                break;
+            case "kricketot":
+                icon = R.drawable.kricketot;
+                break;
+            case "kricketune":
+                icon = R.drawable.kricketune;
+                break;
+            case "krokorok":
+                icon = R.drawable.krokorok;
+                break;
+            case "krookodile":
+                icon = R.drawable.krookodile;
+                break;
+            case "kyogre":
+                icon = R.drawable.kyogre;
+                break;
+            case "kyurem-black":
+                icon = R.drawable.kyurem_black;
+                break;
+            case "kyurem-white":
+                icon = R.drawable.kyurem_white;
+                break;
+            case "kyurem":
+                icon = R.drawable.kyurem;
+                break;
+            case "lairon":
+                icon = R.drawable.lairon;
+                break;
+            case "lampent":
+                icon = R.drawable.lampent;
+                break;
+            case "landorus-therian":
+                icon = R.drawable.landorus_therian;
+                break;
+            case "landorus":
+                icon = R.drawable.landorus;
+                break;
+            case "lanturn":
+                icon = R.drawable.lanturn;
+                break;
+            case "lapras":
+                icon = R.drawable.lapras;
+                break;
+            case "larvesta":
+                icon = R.drawable.larvesta;
+                break;
+            case "larvitar":
+                icon = R.drawable.larvitar;
+                break;
+            case "latias-mega":
+                icon = R.drawable.latias_mega;
+                break;
+            case "latias":
+                icon = R.drawable.latias;
+                break;
+            case "latios-mega":
+                icon = R.drawable.latios_mega;
+                break;
+            case "latios":
+                icon = R.drawable.latios;
+                break;
+            case "leafeon":
+                icon = R.drawable.leafeon;
+                break;
+            case "leavanny":
+                icon = R.drawable.leavanny;
+                break;
+            case "ledian":
+                icon = R.drawable.ledian;
+                break;
+            case "ledyba":
+                icon = R.drawable.ledyba;
+                break;
+            case "lickilicky":
+                icon = R.drawable.lickilicky;
+                break;
+            case "lickitung":
+                icon = R.drawable.lickitung;
+                break;
+            case "liepard":
+                icon = R.drawable.liepard;
+                break;
+            case "lileep":
+                icon = R.drawable.lileep;
+                break;
+            case "lilligant":
+                icon = R.drawable.lilligant;
+                break;
+            case "lillipup":
+                icon = R.drawable.lillipup;
+                break;
+            case "linoone":
+                icon = R.drawable.linoone;
+                break;
+            case "litleo":
+                icon = R.drawable.litleo;
+                break;
+            case "litwick":
+                icon = R.drawable.litwick;
+                break;
+            case "lombre":
+                icon = R.drawable.lombre;
+                break;
+            case "lopunny":
+                icon = R.drawable.lopunny;
+                break;
+            case "lotad":
+                icon = R.drawable.lotad;
+                break;
+            case "loudred":
+                icon = R.drawable.loudred;
+                break;
+            case "lucario":
+                icon = R.drawable.lucario;
+                break;
+            case "ludicolo":
+                icon = R.drawable.ludicolo;
+                break;
+            case "lugia":
+                icon = R.drawable.lugia;
+                break;
+            case "lugiad":
+                icon = R.drawable.lugiad;
+                break;
+            case "lumineon":
+                icon = R.drawable.lumineon;
+                break;
+            case "lunatone":
+                icon = R.drawable.lunatone;
+                break;
+            case "luvdisc":
+                icon = R.drawable.luvdisc;
+                break;
+            case "luxio":
+                icon = R.drawable.luxio;
+                break;
+            case "luxray":
+                icon = R.drawable.luxray;
+                break;
+            case "machamp":
+                icon = R.drawable.machamp;
+                break;
+            case "machoke":
+                icon = R.drawable.machoke;
+                break;
+            case "machop":
+                icon = R.drawable.machop;
+                break;
+            case "magby":
+                icon = R.drawable.magby;
+                break;
+            case "magcargo":
+                icon = R.drawable.magcargo;
+                break;
+            case "magikarp":
+                icon = R.drawable.magikarp;
+                break;
+            case "magmar":
+                icon = R.drawable.magmar;
+                break;
+            case "magmortar":
+                icon = R.drawable.magmortar;
+                break;
+            case "magnemite":
+                icon = R.drawable.magnemite;
+                break;
+            case "magneton":
+                icon = R.drawable.magneton;
+                break;
+            case "magnezone":
+                icon = R.drawable.magnezone;
+                break;
+            case "makuhita":
+                icon = R.drawable.makuhita;
+                break;
+            case "malamar":
+                icon = R.drawable.malamar;
+                break;
+            case "mamoswine":
+                icon = R.drawable.mamoswine;
+                break;
+            case "manaphy":
+                icon = R.drawable.manaphy;
+                break;
+            case "mandibuzz":
+                icon = R.drawable.mandibuzz;
+                break;
+            case "manectric-mega":
+                icon = R.drawable.manectric_mega;
+                break;
+            case "manectric":
+                icon = R.drawable.manectric;
+                break;
+            case "mankey":
+                icon = R.drawable.mankey;
+                break;
+            case "mantine":
+                icon = R.drawable.mantine;
+                break;
+            case "mantyke":
+                icon = R.drawable.mantyke;
+                break;
+            case "maractus":
+                icon = R.drawable.maractus;
+                break;
+            case "mareep":
+                icon = R.drawable.mareep;
+                break;
+            case "marill":
+                icon = R.drawable.marill;
+                break;
+            case "marowak":
+                icon = R.drawable.marowak;
+                break;
+            case "marshtomp":
+                icon = R.drawable.marshtomp;
+                break;
+            case "masquerain":
+                icon = R.drawable.masquerain;
+                break;
+            case "mawile-mega":
+                icon = R.drawable.mawile_mega;
+                break;
+            case "mawile":
+                icon = R.drawable.mawile;
+                break;
+            case "medicham-mega":
+                icon = R.drawable.medicham_mega;
+                break;
+            case "medicham":
+                icon = R.drawable.medicham;
+                break;
+            case "meditite":
+                icon = R.drawable.meditite;
+                break;
+            case "meganium":
+                icon = R.drawable.meganium;
+                break;
+            case "meloetta-pirouette":
+                icon = R.drawable.meloetta_pirouette;
+                break;
+            case "meloetta":
+                icon = R.drawable.meloetta;
+                break;
+            case "meowstic":
+                icon = R.drawable.meowstic;
+                break;
+            case "meowth":
+                icon = R.drawable.meowth;
+                break;
+            case "mesprit":
+                icon = R.drawable.mesprit;
+                break;
+            case "metagross":
+                icon = R.drawable.metagross;
+                break;
+            case "metang":
+                icon = R.drawable.metang;
+                break;
+            case "metapod":
+                icon = R.drawable.metapod;
+                break;
+            case "mew":
+                icon = R.drawable.mew;
+                break;
+            case "mewtwo-megax":
+                icon = R.drawable.mewtwo_megax;
+                break;
+            case "mewtwo-megay":
+                icon = R.drawable.mewtwo_megay;
+                break;
+            case "mewtwo":
+                icon = R.drawable.mewtwo;
+                break;
+            case "mienfoo":
+                icon = R.drawable.mienfoo;
+                break;
+            case "mienshao":
+                icon = R.drawable.mienshao;
+                break;
+            case "mightyena":
+                icon = R.drawable.mightyena;
+                break;
+            case "milotic":
+                icon = R.drawable.milotic;
+                break;
+            case "miltank":
+                icon = R.drawable.miltank;
+                break;
+            case "mime_jr":
+                icon = R.drawable.mime_jr;
+                break;
+            case "minccino":
+                icon = R.drawable.minccino;
+                break;
+            case "minun":
+                icon = R.drawable.minun;
+                break;
+            case "misdreavus":
+                icon = R.drawable.misdreavus;
+                break;
+            case "mismagius":
+                icon = R.drawable.mismagius;
+                break;
+            case "moltres":
+                icon = R.drawable.moltres;
+                break;
+            case "monferno":
+                icon = R.drawable.monferno;
+                break;
+            case "mothim":
+                icon = R.drawable.mothim;
+                break;
+            case "mr_mime":
+                icon = R.drawable.mr_mime;
+                break;
+            case "mudkip":
+                icon = R.drawable.mudkip;
+                break;
+            case "muk":
+                icon = R.drawable.muk;
+                break;
+            case "munchlax":
+                icon = R.drawable.munchlax;
+                break;
+            case "munna":
+                icon = R.drawable.munna;
+                break;
+            case "murkrow":
+                icon = R.drawable.murkrow;
+                break;
+            case "musharna":
+                icon = R.drawable.musharna;
+                break;
+            case "natu":
+                icon = R.drawable.natu;
+                break;
+            case "nidoking":
+                icon = R.drawable.nidoking;
+                break;
+            case "nidoqueen":
+                icon = R.drawable.nidoqueen;
+                break;
+            case "nidoran_f":
+                icon = R.drawable.nidoran_f;
+                break;
+            case "nidoran_m":
+                icon = R.drawable.nidoran_m;
+                break;
+            case "nidorina":
+                icon = R.drawable.nidorina;
+                break;
+            case "nidorino":
+                icon = R.drawable.nidorino;
+                break;
+            case "nincada":
+                icon = R.drawable.nincada;
+                break;
+            case "ninetales":
+                icon = R.drawable.ninetales;
+                break;
+            case "ninjask":
+                icon = R.drawable.ninjask;
+                break;
+            case "noctowl":
+                icon = R.drawable.noctowl;
+                break;
+            case "noibat":
+                icon = R.drawable.noibat;
+                break;
+            case "noivern":
+                icon = R.drawable.noivern;
+                break;
+            case "nosepass":
+                icon = R.drawable.nosepass;
+                break;
+            case "numel":
+                icon = R.drawable.numel;
+                break;
+            case "nuzleaf":
+                icon = R.drawable.nuzleaf;
+                break;
+            case "octillery":
+                icon = R.drawable.octillery;
+                break;
+            case "oddish":
+                icon = R.drawable.oddish;
+                break;
+            case "omanyte":
+                icon = R.drawable.omanyte;
+                break;
+            case "omastar":
+                icon = R.drawable.omastar;
+                break;
+            case "onix":
+                icon = R.drawable.onix;
+                break;
+            case "oshawott":
+                icon = R.drawable.oshawott;
+                break;
+            case "pachirisu":
+                icon = R.drawable.pachirisu;
+                break;
+            case "palkia":
+                icon = R.drawable.palkia;
+                break;
+            case "palpitoad":
+                icon = R.drawable.palpitoad;
+                break;
+            case "pancham":
+                icon = R.drawable.pancham;
+                break;
+            case "pangoro":
+                icon = R.drawable.pangoro;
+                break;
+            case "panpour":
+                icon = R.drawable.panpour;
+                break;
+            case "pansage":
+                icon = R.drawable.pansage;
+                break;
+            case "pansear":
+                icon = R.drawable.pansear;
+                break;
+            case "paras":
+                icon = R.drawable.paras;
+                break;
+            case "parasect":
+                icon = R.drawable.parasect;
+                break;
+            case "patrat":
+                icon = R.drawable.patrat;
+                break;
+            case "pawniard":
+                icon = R.drawable.pawniard;
+                break;
+            case "pelipper":
+                icon = R.drawable.pelipper;
+                break;
+            case "persian":
+                icon = R.drawable.persian;
+                break;
+            case "petilil":
+                icon = R.drawable.petilil;
+                break;
+            case "phanpy":
+                icon = R.drawable.phanpy;
+                break;
+            case "phantump":
+                icon = R.drawable.phantump;
+                break;
+            case "phione":
+                icon = R.drawable.phione;
+                break;
+            case "pichu":
+                icon = R.drawable.pichu;
+                break;
+            case "pidgeot":
+                icon = R.drawable.pidgeot;
+                break;
+            case "pidgeotto":
+                icon = R.drawable.pidgeotto;
+                break;
+            case "pidgey":
+                icon = R.drawable.pidgey;
+                break;
+            case "pidove":
+                icon = R.drawable.pidove;
+                break;
+            case "pignite":
+                icon = R.drawable.pignite;
+                break;
+            case "pikachu":
+                icon = R.drawable.pikachu;
+                break;
+            case "piloswine":
+                icon = R.drawable.piloswine;
+                break;
+            case "pineco":
+                icon = R.drawable.pineco;
+                break;
+            case "pinsir-mega":
+                icon = R.drawable.pinsir_mega;
+                break;
+            case "pinsir":
+                icon = R.drawable.pinsir;
+                break;
+            case "piplup":
+                icon = R.drawable.piplup;
+                break;
+            case "plusle":
+                icon = R.drawable.plusle;
+                break;
+            case "politoed":
+                icon = R.drawable.politoed;
+                break;
+            case "poliwag":
+                icon = R.drawable.poliwag;
+                break;
+            case "poliwhirl":
+                icon = R.drawable.poliwhirl;
+                break;
+            case "poliwrath":
+                icon = R.drawable.poliwrath;
+                break;
+            case "ponyta":
+                icon = R.drawable.ponyta;
+                break;
+            case "poochyena":
+                icon = R.drawable.poochyena;
+                break;
+            case "porygon-z":
+                icon = R.drawable.porygon_z;
+                break;
+            case "porygon":
+                icon = R.drawable.porygon;
+                break;
+            case "porygon2":
+                icon = R.drawable.porygon2;
+                break;
+            case "primeape":
+                icon = R.drawable.primeape;
+                break;
+            case "prinplup":
+                icon = R.drawable.prinplup;
+                break;
+            case "probopass":
+                icon = R.drawable.probopass;
+                break;
+            case "psyduck":
+                icon = R.drawable.psyduck;
+                break;
+            case "pumpkaboo-large":
+                icon = R.drawable.pumpkaboo_large;
+                break;
+            case "pumpkaboo-small":
+                icon = R.drawable.pumpkaboo_small;
+                break;
+            case "pumpkaboo-super":
+                icon = R.drawable.pumpkaboo_super;
+                break;
+            case "pumpkaboo":
+                icon = R.drawable.pumpkaboo;
+                break;
+            case "pupitar":
+                icon = R.drawable.pupitar;
+                break;
+            case "purrloin":
+                icon = R.drawable.purrloin;
+                break;
+            case "purugly":
+                icon = R.drawable.purugly;
+                break;
+            case "pyroar":
+                icon = R.drawable.pyroar;
+                break;
+            case "quagsire":
+                icon = R.drawable.quagsire;
+                break;
+            case "quilava":
+                icon = R.drawable.quilava;
+                break;
+            case "quilladin":
+                icon = R.drawable.quilladin;
+                break;
+            case "qwilfish":
+                icon = R.drawable.qwilfish;
+                break;
+            case "raichu":
+                icon = R.drawable.raichu;
+                break;
+            case "raikou":
+                icon = R.drawable.raikou;
+                break;
+            case "ralts":
+                icon = R.drawable.ralts;
+                break;
+            case "rampardos":
+                icon = R.drawable.rampardos;
+                break;
+            case "rapidash":
+                icon = R.drawable.rapidash;
+                break;
+            case "raticate":
+                icon = R.drawable.raticate;
+                break;
+            case "rattata":
+                icon = R.drawable.rattata;
+                break;
+            case "rayquaza":
+                icon = R.drawable.rayquaza;
+                break;
+            case "regice":
+                icon = R.drawable.regice;
+                break;
+            case "regigigas":
+                icon = R.drawable.regigigas;
+                break;
+            case "regirock":
+                icon = R.drawable.regirock;
+                break;
+            case "registeel":
+                icon = R.drawable.registeel;
+                break;
+            case "relicanth":
+                icon = R.drawable.relicanth;
+                break;
+            case "remoraid":
+                icon = R.drawable.remoraid;
+                break;
+            case "reshiram":
+                icon = R.drawable.reshiram;
+                break;
+            case "reuniclus":
+                icon = R.drawable.reuniclus;
+                break;
+            case "rhydon":
+                icon = R.drawable.rhydon;
+                break;
+            case "rhyhorn":
+                icon = R.drawable.rhyhorn;
+                break;
+            case "rhyperior":
+                icon = R.drawable.rhyperior;
+                break;
+            case "riolu":
+                icon = R.drawable.riolu;
+                break;
+            case "roggenrola":
+                icon = R.drawable.roggenrola;
+                break;
+            case "roselia":
+                icon = R.drawable.roselia;
+                break;
+            case "roserade":
+                icon = R.drawable.roserade;
+                break;
+            case "rotom-fan":
+                icon = R.drawable.rotom_fan;
+                break;
+            case "rotom-heat":
+                icon = R.drawable.rotom_heat;
+                break;
+            case "rotom-mow":
+                icon = R.drawable.rotom_mow;
+                break;
+            case "rotom-wash":
+                icon = R.drawable.rotom_wash;
+                break;
+            case "rotom":
+                icon = R.drawable.rotom;
+                break;
+            case "rufflet":
+                icon = R.drawable.rufflet;
+                break;
+            case "sableye":
+                icon = R.drawable.sableye;
+                break;
+            case "salamence":
+                icon = R.drawable.salamence;
+                break;
+            case "samurott":
+                icon = R.drawable.samurott;
+                break;
+            case "sandile":
+                icon = R.drawable.sandile;
+                break;
+            case "sandshrew":
+                icon = R.drawable.sandshrew;
+                break;
+            case "sandslash":
+                icon = R.drawable.sandslash;
+                break;
+            case "sawk":
+                icon = R.drawable.sawk;
+                break;
+            case "sawsbuck-autumn":
+                icon = R.drawable.sawsbuck_autumn;
+                break;
+            case "sawsbuck":
+                icon = R.drawable.sawsbuck;
+                break;
+            case "scatterbug":
+                icon = R.drawable.scatterbug;
+                break;
+            case "sceptile":
+                icon = R.drawable.sceptile;
+                break;
+            case "scizor-mega":
+                icon = R.drawable.scizor_mega;
+                break;
+            case "scizor":
+                icon = R.drawable.scizor;
+                break;
+            case "scolipede":
+                icon = R.drawable.scolipede;
+                break;
+            case "scrafty":
+                icon = R.drawable.scrafty;
+                break;
+            case "scraggy":
+                icon = R.drawable.scraggy;
+                break;
+            case "scyther":
+                icon = R.drawable.scyther;
+                break;
+            case "seadra":
+                icon = R.drawable.seadra;
+                break;
+            case "seaking":
+                icon = R.drawable.seaking;
+                break;
+            case "sealeo":
+                icon = R.drawable.sealeo;
+                break;
+            case "seedot":
+                icon = R.drawable.seedot;
+                break;
+            case "seel":
+                icon = R.drawable.seel;
+                break;
+            case "seismitoad":
+                icon = R.drawable.seismitoad;
+                break;
+            case "sentret":
+                icon = R.drawable.sentret;
+                break;
+            case "serperior":
+                icon = R.drawable.serperior;
+                break;
+            case "servine":
+                icon = R.drawable.servine;
+                break;
+            case "seviper":
+                icon = R.drawable.seviper;
+                break;
+            case "sewaddle":
+                icon = R.drawable.sewaddle;
+                break;
+            case "sharpedo":
+                icon = R.drawable.sharpedo;
+                break;
+            case "shaymin-sky":
+                icon = R.drawable.shaymin_sky;
+                break;
+            case "shaymin":
+                icon = R.drawable.shaymin;
+                break;
+            case "shedinja":
+                icon = R.drawable.shedinja;
+                break;
+            case "shelgon":
+                icon = R.drawable.shelgon;
+                break;
+            case "shellder":
+                icon = R.drawable.shellder;
+                break;
+            case "shellos-east":
+                icon = R.drawable.shellos_east;
+                break;
+            case "shellos":
+                icon = R.drawable.shellos;
+                break;
+            case "shelmet":
+                icon = R.drawable.shelmet;
+                break;
+            case "shieldon":
+                icon = R.drawable.shieldon;
+                break;
+            case "shiftry":
+                icon = R.drawable.shiftry;
+                break;
+            case "shinx":
+                icon = R.drawable.shinx;
+                break;
+            case "shroomish":
+                icon = R.drawable.shroomish;
+                break;
+            case "shuckle":
+                icon = R.drawable.shuckle;
+                break;
+            case "shuppet":
+                icon = R.drawable.shuppet;
+                break;
+            case "sigilyph":
+                icon = R.drawable.sigilyph;
+                break;
+            case "silcoon":
+                icon = R.drawable.silcoon;
+                break;
+            case "simipour":
+                icon = R.drawable.simipour;
+                break;
+            case "simisage":
+                icon = R.drawable.simisage;
+                break;
+            case "simisear":
+                icon = R.drawable.simisear;
+                break;
+            case "skarmory":
+                icon = R.drawable.skarmory;
+                break;
+            case "skiddo":
+                icon = R.drawable.skiddo;
+                break;
+            case "skiploom":
+                icon = R.drawable.skiploom;
+                break;
+            case "skitty":
+                icon = R.drawable.skitty;
+                break;
+            case "skorupi":
+                icon = R.drawable.skorupi;
+                break;
+            case "skrelp":
+                icon = R.drawable.skrelp;
+                break;
+            case "skuntank":
+                icon = R.drawable.skuntank;
+                break;
+            case "slaking":
+                icon = R.drawable.slaking;
+                break;
+            case "slakoth":
+                icon = R.drawable.slakoth;
+                break;
+            case "sliggoo":
+                icon = R.drawable.sliggoo;
+                break;
+            case "slowbro":
+                icon = R.drawable.slowbro;
+                break;
+            case "slowking":
+                icon = R.drawable.slowking;
+                break;
+            case "slowpoke":
+                icon = R.drawable.slowpoke;
+                break;
+            case "slugma":
+                icon = R.drawable.slugma;
+                break;
+            case "slurpuff":
+                icon = R.drawable.slurpuff;
+                break;
+            case "smeargle":
+                icon = R.drawable.smeargle;
+                break;
+            case "smoochum":
+                icon = R.drawable.smoochum;
+                break;
+            case "sneasel":
+                icon = R.drawable.sneasel;
+                break;
+            case "snivy":
+                icon = R.drawable.snivy;
+                break;
+            case "snorlax":
+                icon = R.drawable.snorlax;
+                break;
+            case "snorunt":
+                icon = R.drawable.snorunt;
+                break;
+            case "snover":
+                icon = R.drawable.snover;
+                break;
+            case "snubbull":
+                icon = R.drawable.snubbull;
+                break;
+            case "solosis":
+                icon = R.drawable.solosis;
+                break;
+            case "solrock":
+                icon = R.drawable.solrock;
+                break;
+            case "spearow":
+                icon = R.drawable.spearow;
+                break;
+            case "spewpa":
+                icon = R.drawable.spewpa;
+                break;
+            case "spheal":
+                icon = R.drawable.spheal;
+                break;
+            case "spinarak":
+                icon = R.drawable.spinarak;
+                break;
+            case "spinda":
+                icon = R.drawable.spinda;
+                break;
+            case "spiritomb":
+                icon = R.drawable.spiritomb;
+                break;
+            case "spoink":
+                icon = R.drawable.spoink;
+                break;
+            case "spritzee":
+                icon = R.drawable.spritzee;
+                break;
+            case "squirtle":
+                icon = R.drawable.squirtle;
+                break;
+            case "stantler":
+                icon = R.drawable.stantler;
+                break;
+            case "staraptor":
+                icon = R.drawable.staraptor;
+                break;
+            case "staravia":
+                icon = R.drawable.staravia;
+                break;
+            case "starly":
+                icon = R.drawable.starly;
+                break;
+            case "starmie":
+                icon = R.drawable.starmie;
+                break;
+            case "staryu":
+                icon = R.drawable.staryu;
+                break;
+            case "steelix":
+                icon = R.drawable.steelix;
+                break;
+            case "stoutland":
+                icon = R.drawable.stoutland;
+                break;
+            case "stunfisk":
+                icon = R.drawable.stunfisk;
+                break;
+            case "stunky":
+                icon = R.drawable.stunky;
+                break;
+            case "sudowoodo":
+                icon = R.drawable.sudowoodo;
+                break;
+            case "suicune":
+                icon = R.drawable.suicune;
+                break;
+            case "sunflora":
+                icon = R.drawable.sunflora;
+                break;
+            case "sunkern":
+                icon = R.drawable.sunkern;
+                break;
+            case "surskit":
+                icon = R.drawable.surskit;
+                break;
+            case "swablu":
+                icon = R.drawable.swablu;
+                break;
+            case "swadloon":
+                icon = R.drawable.swadloon;
+                break;
+            case "swalot":
+                icon = R.drawable.swalot;
+                break;
+            case "swampert":
+                icon = R.drawable.swampert;
+                break;
+            case "swanna":
+                icon = R.drawable.swanna;
+                break;
+            case "swellow":
+                icon = R.drawable.swellow;
+                break;
+            case "swinub":
+                icon = R.drawable.swinub;
+                break;
+            case "swirlix":
+                icon = R.drawable.swirlix;
+                break;
+            case "swoobat":
+                icon = R.drawable.swoobat;
+                break;
+            case "sylveon":
+                icon = R.drawable.sylveon;
+                break;
+            case "taillow":
+                icon = R.drawable.taillow;
+                break;
+            case "talonflame":
+                icon = R.drawable.talonflame;
+                break;
+            case "tangela":
+                icon = R.drawable.tangela;
+                break;
+            case "tangrowth":
+                icon = R.drawable.tangrowth;
+                break;
+            case "tauros":
+                icon = R.drawable.tauros;
+                break;
+            case "teddiursa":
+                icon = R.drawable.teddiursa;
+                break;
+            case "tentacool":
+                icon = R.drawable.tentacool;
+                break;
+            case "tentacruel":
+                icon = R.drawable.tentacruel;
+                break;
+            case "tepig":
+                icon = R.drawable.tepig;
+                break;
+            case "terrakion":
+                icon = R.drawable.terrakion;
+                break;
+            case "throh":
+                icon = R.drawable.throh;
+                break;
+            case "thundurus-therian":
+                icon = R.drawable.thundurus_therian;
+                break;
+            case "thundurus":
+                icon = R.drawable.thundurus;
+                break;
+            case "timburr":
+                icon = R.drawable.timburr;
+                break;
+            case "tirtouga":
+                icon = R.drawable.tirtouga;
+                break;
+            case "togekiss":
+                icon = R.drawable.togekiss;
+                break;
+            case "togepi":
+                icon = R.drawable.togepi;
+                break;
+            case "togetic":
+                icon = R.drawable.togetic;
+                break;
+            case "torchic":
+                icon = R.drawable.torchic;
+                break;
+            case "torkoal":
+                icon = R.drawable.torkoal;
+                break;
+            case "tornadus-therian":
+                icon = R.drawable.tornadus_therian;
+                break;
+            case "tornadus":
+                icon = R.drawable.tornadus;
+                break;
+            case "torterra":
+                icon = R.drawable.torterra;
+                break;
+            case "totodile":
+                icon = R.drawable.totodile;
+                break;
+            case "toxicroak":
+                icon = R.drawable.toxicroak;
+                break;
+            case "tranquill":
+                icon = R.drawable.tranquill;
+                break;
+            case "trapinch":
+                icon = R.drawable.trapinch;
+                break;
+            case "treecko":
+                icon = R.drawable.treecko;
+                break;
+            case "trevenant":
+                icon = R.drawable.trevenant;
+                break;
+            case "tropius":
+                icon = R.drawable.tropius;
+                break;
+            case "trubbish":
+                icon = R.drawable.trubbish;
+                break;
+            case "turtwig":
+                icon = R.drawable.turtwig;
+                break;
+            case "tympole":
+                icon = R.drawable.tympole;
+                break;
+            case "tynamo":
+                icon = R.drawable.tynamo;
+                break;
+            case "typhlosion":
+                icon = R.drawable.typhlosion;
+                break;
+            case "tyranitar-mega":
+                icon = R.drawable.tyranitar_mega;
+                break;
+            case "tyranitar":
+                icon = R.drawable.tyranitar;
+                break;
+            case "tyrantrum":
+                icon = R.drawable.tyrantrum;
+                break;
+            case "tyrogue":
+                icon = R.drawable.tyrogue;
+                break;
+            case "tyrunt":
+                icon = R.drawable.tyrunt;
+                break;
+            case "umbreon":
+                icon = R.drawable.umbreon;
+                break;
+            case "unfezant":
+                icon = R.drawable.unfezant;
+                break;
+            case "unown-bravo":
+                icon = R.drawable.unown_bravo;
+                break;
+            case "unown-charlie":
+                icon = R.drawable.unown_charlie;
+                break;
+            case "unown-delta":
+                icon = R.drawable.unown_delta;
+                break;
+            case "unown-echo":
+                icon = R.drawable.unown_echo;
+                break;
+            case "unown-exclamation":
+                icon = R.drawable.unown_exclamation;
+                break;
+            case "unown-foxtrot":
+                icon = R.drawable.unown_foxtrot;
+                break;
+            case "unown-golf":
+                icon = R.drawable.unown_golf;
+                break;
+            case "unown-hotel":
+                icon = R.drawable.unown_hotel;
+                break;
+            case "unown-india":
+                icon = R.drawable.unown_india;
+                break;
+            case "unown-interrogation":
+                icon = R.drawable.unown_interrogation;
+                break;
+            case "unown-juliet":
+                icon = R.drawable.unown_juliet;
+                break;
+            case "unown-kilo":
+                icon = R.drawable.unown_kilo;
+                break;
+            case "unown-lima":
+                icon = R.drawable.unown_lima;
+                break;
+            case "unown-mike":
+                icon = R.drawable.unown_mike;
+                break;
+            case "unown-november":
+                icon = R.drawable.unown_november;
+                break;
+            case "unown-oscar":
+                icon = R.drawable.unown_oscar;
+                break;
+            case "unown-papa":
+                icon = R.drawable.unown_papa;
+                break;
+            case "unown-quebec":
+                icon = R.drawable.unown_quebec;
+                break;
+            case "unown-romeo":
+                icon = R.drawable.unown_romeo;
+                break;
+            case "unown-sierra":
+                icon = R.drawable.unown_sierra;
+                break;
+            case "unown-tango":
+                icon = R.drawable.unown_tango;
+                break;
+            case "unown-uniform":
+                icon = R.drawable.unown_uniform;
+                break;
+            case "unown-victor":
+                icon = R.drawable.unown_victor;
+                break;
+            case "unown-whiskey":
+                icon = R.drawable.unown_whiskey;
+                break;
+            case "unown-xray":
+                icon = R.drawable.unown_xray;
+                break;
+            case "unown-yankee":
+                icon = R.drawable.unown_yankee;
+                break;
+            case "unown-zulu":
+                icon = R.drawable.unown_zulu;
+                break;
+            case "unown":
+                icon = R.drawable.unown;
+                break;
+            case "ursaring":
+                icon = R.drawable.ursaring;
+                break;
+            case "uxie":
+                icon = R.drawable.uxie;
+                break;
+            case "vanillish":
+                icon = R.drawable.vanillish;
+                break;
+            case "vanillite":
+                icon = R.drawable.vanillite;
+                break;
+            case "vanilluxe":
+                icon = R.drawable.vanilluxe;
+                break;
+            case "vaporeon":
+                icon = R.drawable.vaporeon;
+                break;
+            case "venipede":
+                icon = R.drawable.venipede;
+                break;
+            case "venomoth":
+                icon = R.drawable.venomoth;
+                break;
+            case "venonat":
+                icon = R.drawable.venonat;
+                break;
+            case "venusaur-mega":
+                icon = R.drawable.venusaur_mega;
+                break;
+            case "venusaur":
+                icon = R.drawable.venusaur;
+                break;
+            case "vespiquen":
+                icon = R.drawable.vespiquen;
+                break;
+            case "vibrava":
+                icon = R.drawable.vibrava;
+                break;
+            case "victini":
+                icon = R.drawable.victini;
+                break;
+            case "victreebel":
+                icon = R.drawable.victreebel;
+                break;
+            case "vigoroth":
+                icon = R.drawable.vigoroth;
+                break;
+            case "vileplume":
+                icon = R.drawable.vileplume;
+                break;
+            case "virizion":
+                icon = R.drawable.virizion;
+                break;
+            case "vivillon-pokeball":
+                icon = R.drawable.vivillon_pokeball;
+                break;
+            case "vivillon":
+                icon = R.drawable.vivillon;
+                break;
+            case "volbeat":
+                icon = R.drawable.volbeat;
+                break;
+            case "volcanion":
+                icon = R.drawable.volcanion;
+                break;
+            case "volcarona":
+                icon = R.drawable.volcarona;
+                break;
+            case "voltorb":
+                icon = R.drawable.voltorb;
+                break;
+            case "vullaby":
+                icon = R.drawable.vullaby;
+                break;
+            case "vulpix":
+                icon = R.drawable.vulpix;
+                break;
+            case "wailmer":
+                icon = R.drawable.wailmer;
+                break;
+            case "wailord":
+                icon = R.drawable.wailord;
+                break;
+            case "walrein":
+                icon = R.drawable.walrein;
+                break;
+            case "wartortle":
+                icon = R.drawable.wartortle;
+                break;
+            case "watchog":
+                icon = R.drawable.watchog;
+                break;
+            case "weavile":
+                icon = R.drawable.weavile;
+                break;
+            case "weedle":
+                icon = R.drawable.weedle;
+                break;
+            case "weepinbell":
+                icon = R.drawable.weepinbell;
+                break;
+            case "weezing":
+                icon = R.drawable.weezing;
+                break;
+            case "whimsicott":
+                icon = R.drawable.whimsicott;
+                break;
+            case "whirlipede":
+                icon = R.drawable.whirlipede;
+                break;
+            case "whiscash":
+                icon = R.drawable.whiscash;
+                break;
+            case "whismur":
+                icon = R.drawable.whismur;
+                break;
+            case "wigglytuff":
+                icon = R.drawable.wigglytuff;
+                break;
+            case "wingull":
+                icon = R.drawable.wingull;
+                break;
+            case "wobbuffet":
+                icon = R.drawable.wobbuffet;
+                break;
+            case "woobat":
+                icon = R.drawable.woobat;
+                break;
+            case "wooper":
+                icon = R.drawable.wooper;
+                break;
+            case "wormadam-sandy":
+                icon = R.drawable.wormadam_sandy;
+                break;
+            case "wormadam-trash":
+                icon = R.drawable.wormadam_trash;
+                break;
+            case "wormadam":
+                icon = R.drawable.wormadam;
+                break;
+            case "wurmple":
+                icon = R.drawable.wurmple;
+                break;
+            case "wynaut":
+                icon = R.drawable.wynaut;
+                break;
+            case "xatu":
+                icon = R.drawable.xatu;
+                break;
+            case "xerneas-active":
+                icon = R.drawable.xerneas_active;
+                break;
+            case "xerneas":
+                icon = R.drawable.xerneas;
+                break;
+            case "yamask":
+                icon = R.drawable.yamask;
+                break;
+            case "yanma":
+                icon = R.drawable.yanma;
+                break;
+            case "yanmega":
+                icon = R.drawable.yanmega;
+                break;
+            case "yveltal":
+                icon = R.drawable.yveltal;
+                break;
+            case "zangoose":
+                icon = R.drawable.zangoose;
+                break;
+            case "zapdos":
+                icon = R.drawable.zapdos;
+                break;
+            case "zebstrika":
+                icon = R.drawable.zebstrika;
+                break;
+            case "zekrom":
+                icon = R.drawable.zekrom;
+                break;
+            case "zigzagoon":
+                icon = R.drawable.zigzagoon;
+                break;
+            case "zoroark":
+                icon = R.drawable.zoroark;
+                break;
+            case "zorua":
+                icon = R.drawable.zorua;
+                break;
+            case "zubat":
+                icon = R.drawable.zubat;
+                break;
+            case "zweilous":
+                icon = R.drawable.zweilous;
+                break;
+            case "zygarde":
+                icon = R.drawable.zygarde;
+                break;
+
+
+
+            default:
+                icon = R.drawable.p0;
+                break;
+        }
+
+
+        return icon;
+    }
+
+
+    /*public static int getSprite(int pokemonId, String rawName) {
+        if (pokemonId == 1) { return R.drawable.blastoise_mega; }
         if (pokemonId == 2) { return R.drawable.p2; }
         if (pokemonId == 3) { return R.drawable.p3; }
         if (pokemonId == 3) { return R.drawable.p3; }
@@ -823,8 +3297,8 @@ public final class SpriteUtils {
         if (pokemonId == 720) { return R.drawable.p720unbounda; }
         if (pokemonId == 721) { return R.drawable.p721a; }
         else { return R.drawable.p0; }
-    }
-    public static int getShinySprite(int pokemonId, String rawName) {
+    }*/
+    /*public static int getShinySprite(int pokemonId, String rawName) {
         if (pokemonId == 1) { return R.drawable.p1a; }
         if (pokemonId == 2) { return R.drawable.p2a; }
         if (pokemonId == 3) { return R.drawable.p3a; }
@@ -1637,6 +4111,5 @@ public final class SpriteUtils {
         if (pokemonId == 720) { return R.drawable.p720unbound; }
         if (pokemonId == 721) { return R.drawable.p721; }
         else { return R.drawable.p0; }
-    }
-*/
+    }*/
 }
