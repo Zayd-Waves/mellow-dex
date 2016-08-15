@@ -14,4 +14,19 @@ I currently don't have any plans to publish this on the app store because of the
 ## The Data
 As tempting as it is to store all the data on a web server, my original goal was to provide a pokedex with all the data you'll need bundled up with it. There is a *ton* of information that needs to be stored though, so efficiency is key.
 
+## Copyright and License
 This software comes bundled with data from the Pokémon series of video games. This is all the intellectual property of Nintendo, Creatures, inc., and GAME FREAK, inc. and is protected by various copyrights and trademarks.
+
+Copyright [2016] [Zayd Bille]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
