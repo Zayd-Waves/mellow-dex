@@ -6,7 +6,7 @@ A marshmallow pokedex.
 In anticipation for the upcoming Pokémon [Sun and Moon](http://www.serebii.net/sunmoon/) games, ol' Professor Zayd here decided it was time to make a fancy new Pokédex.
 
 ## The Data
-I want this application to store all the Pokémon-related information for the **current main series games only**. So as of August 2016, that means all 726 Pokémon, every ability, every move. This might change in the future.
+I want this application to store all the Pokémon-related information for the **current main series games only**. So as of August 2016, that means all 726 Pokémon, every ability, every move. This will change as time goes on.
 
 As tempting as it is to store all the data on a web server, my original goal was to provide a pokedex with all the data you'll need bundled up with it. There is a *ton* of information that needs to be stored though, so efficiency is key. But since I can totally see myself regretting this later on down the line, a forked, lighter-weight version of the Pokédex is likely.
 
