@@ -3,16 +3,23 @@
 A marshmallow pokedex.
 
 ## About
-In anticipation for the upcoming Pokemon [Sun and Moon](http://www.serebii.net/sunmoon/) games, ol' Professor Zayd here decided it was time to make a fancy new Pokedex.
-
-First off, a lot of credit goes to Awestruck Studios' [Dexter app.](https://play.google.com/store/apps/details?id=com.awestruckstudios.pkmn&hl=en) Their Android Pokedex was what inspired me to make my own. I really love Dexter and I use it all the time so please check it out on the Google Play Store!
-
-The database used is based off of [Veekun's Pokedex Database](https://github.com/veekun/pokedex), another awesome person who works really hard on maintaining an up-to-date and extensive source of data.
-
-I currently don't have any plans to publish this on the app store because of the copyrighted Pokemon data. If in the future I find a way to release a version that complies with Nintendo's trademarks, then sure! But until then you'll just have to load the apk manually.
+In anticipation for the upcoming Pokémon [Sun and Moon](http://www.serebii.net/sunmoon/) games, ol' Professor Zayd here decided it was time to make a fancy new Pokédex.
 
 ## The Data
-As tempting as it is to store all the data on a web server, my original goal was to provide a pokedex with all the data you'll need bundled up with it. There is a *ton* of information that needs to be stored though, so efficiency is key.
+I want this application to store all the Pokémon-related information for the **current main series games only**. So as of August 2016, that means all 726 Pokémon, every ability, every move. This might change in the future.
+
+As tempting as it is to store all the data on a web server, my original goal was to provide a pokedex with all the data you'll need bundled up with it. There is a *ton* of information that needs to be stored though, so efficiency is key. But since I can totally see myself regretting this later on down the line, a forked, lighter-weight version of the Pokédex is likely.
+
+## Credits
+First off, a lot of credit goes to Awestruck Studios' [Dexter app.](https://play.google.com/store/apps/details?id=com.awestruckstudios.pkmn&hl=en) Their Android Pokedex was what inspired me to make my own. I really love Dexter and I use it all the time so please check it out on the Google Play Store!
+
+The database I implemented is heavily based off of [Veekun's Pokedex Database](https://github.com/veekun/pokedex), another awesome person who works really hard on maintaining an up-to-date and extensive source of data.
+
+## Contributing
+Feel free to contribute any time you like! If you discover a bug or have an idea for a cool new feature you'd like to add, go ahead and create an issue or do a pull request. I'm also open to any and all suggestions.
+
+## Publishing
+I currently don't have any plans to publish this on the app store because of the copyrighted Pokémon data. If in the future I find a way to release a version that complies with Nintendo's trademarks, then sure! But until then you'll just have to load the apk manually.
 
 ## Copyright and License
 This software comes bundled with data from the Pokémon series of video games. This is all the intellectual property of Nintendo, Creatures, inc., and GAME FREAK, inc. and is protected by various copyrights and trademarks.
