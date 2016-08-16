@@ -1,6 +1,6 @@
 # Mellow Dex
 
-A marshmallow pokedex.
+A Marshmalow Pokédex.
 
 ## About
 In anticipation for the upcoming Pokémon [Sun and Moon](http://www.serebii.net/sunmoon/) games, ol' Professor Zayd here decided it was time to make a fancy new Pokédex.
