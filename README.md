@@ -11,9 +11,11 @@ I want this application to store all the Pokémon-related information for the **
 As tempting as it is to store all the data on a web server, my original goal was to provide a pokedex with all the data you'll need bundled up with it. There is a *ton* of information that needs to be stored though, so efficiency is key. But since I can totally see myself regretting this later on down the line, a forked, lighter-weight version of the Pokédex is likely.
 
 ## Download
-If you want to download the app to your phone, you have two options - either find the latest apk in the apk-release folder, or download the source code and build an .apk yourself. 
-For the second option you'll need to:
+If you want to download the app to your phone, you have two options - either find the latest apk in the apk-release folder, or download the source code and build an .apk yourself. For the second option you'll need to:
 * Download Android Studio
+* Import the code you downloaded as an Android Studio Project
+* Build -> Generate Signed APK.
+The next few steps will ask you to sign the app using a keystore. These fields don't really matter too much unless you plan on publishing an app to the play store. You can fill in these fields with whatever for now (If you'd rather not sign the app, then go to Build -> Build APK instead). Take note of where you saved the .apk file and download it to your phone.
 
 ## Credits
 First off, a lot of credit goes to Awestruck Studios' [Dexter app.](https://play.google.com/store/apps/details?id=com.awestruckstudios.pkmn&hl=en) Their Android Pokedex was what inspired me to make my own. I really love Dexter and I use it all the time so please check it out on the Google Play Store!
