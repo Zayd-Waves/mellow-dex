@@ -15,6 +15,7 @@ If you want to download the app to your phone, you have two options - either fin
 * Download Android Studio
 * Import the code you downloaded as an Android Studio Project
 * Build -> Generate Signed APK.
+
 The next few steps will ask you to sign the app using a keystore. These fields don't really matter too much unless you plan on publishing an app to the play store. You can fill in these fields with whatever for now (If you'd rather not sign the app, then go to Build -> Build APK instead). Take note of where you saved the .apk file and download it to your phone.
 
 ## Credits
