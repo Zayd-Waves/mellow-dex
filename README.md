@@ -31,6 +31,7 @@ I currently don't have any plans to publish this on the app store because of the
 
 ## Copyright and License
 This software comes bundled with data from the Pokémon series of video games. This is all the intellectual property of Nintendo, Creatures, inc., and GAME FREAK, inc. and is protected by various copyrights and trademarks.
+
 In addition to the below license, if you use any part of Mellow Dex, I would appreciate a shout-out. :)
 
     Copyright 2016 Zayd Bille
