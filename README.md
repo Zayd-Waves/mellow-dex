@@ -3,7 +3,7 @@
 A Marshmalow Pokédex.
 
 <p align="center">
-![alt text](https://github.com/Zayd-Waves/mellow-dex/blob/master/screenshots/charizard.gif "Charizard")
+<img style="display:inline; margin: 0 auto;" src="https://github.com/Zayd-Waves/mellow-dex/blob/master/screenshots/charizard.gif">
 </p>
 
 ## About
