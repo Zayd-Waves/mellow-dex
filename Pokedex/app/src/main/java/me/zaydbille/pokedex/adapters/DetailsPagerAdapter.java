@@ -21,7 +21,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import me.zaydbille.pokedex.data.Pokemon;
 import me.zaydbille.pokedex.fragments.details.AbilityDetails;
-import me.zaydbille.pokedex.fragments.details.EggDetails;
+import me.zaydbille.pokedex.fragments.details.Evolutions;
 import me.zaydbille.pokedex.fragments.details.MainPokemonDetails;
 import me.zaydbille.pokedex.fragments.details.PokemonTypeDetails;
 import me.zaydbille.pokedex.fragments.details.SkillsDetails;
@@ -56,7 +56,7 @@ public class DetailsPagerAdapter extends FragmentStatePagerAdapter {
                 AbilityDetails tab3 = AbilityDetails.newInstance(pokemon, context);
                 return tab3;
             case 4:
-                AbilityDetails tab4 = AbilityDetails.newInstance(pokemon, context);
+                Evolutions tab4 = Evolutions.newInstance();
                 return tab4;
             default:
                 return null;
@@ -85,7 +85,7 @@ public class DetailsPagerAdapter extends FragmentStatePagerAdapter {
                 title = "Ability";
                 break;
             case 4:
-                title = "Egg";
+                title = "Evolve";
                 break;
         }
         return title;

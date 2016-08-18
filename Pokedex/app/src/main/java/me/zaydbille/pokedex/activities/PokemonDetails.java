@@ -34,7 +34,7 @@ import me.zaydbille.pokedex.R;
 import me.zaydbille.pokedex.adapters.DetailsPagerAdapter;
 import me.zaydbille.pokedex.data.Pokemon;
 import me.zaydbille.pokedex.fragments.details.AbilityDetails;
-import me.zaydbille.pokedex.fragments.details.EggDetails;
+import me.zaydbille.pokedex.fragments.details.Evolutions;
 import me.zaydbille.pokedex.fragments.details.MainPokemonDetails;
 import me.zaydbille.pokedex.fragments.details.PokemonTypeDetails;
 import me.zaydbille.pokedex.fragments.details.SkillsDetails;
@@ -45,7 +45,7 @@ public class PokemonDetails extends AppCompatActivity implements
         SkillsDetails.OnFragmentInteractionListener,
         PokemonTypeDetails.OnFragmentInteractionListener,
         AbilityDetails.OnFragmentInteractionListener,
-        EggDetails.OnFragmentInteractionListener {
+        Evolutions.OnFragmentInteractionListener {
 
     private ActionMenuView                      amvMenu;
     private Pokemon                             pokemon;
