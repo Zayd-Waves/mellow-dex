@@ -2,18 +2,20 @@
 
 A Marshmalow Pokédex.
 
-![alt text](https://github.com/Zayd-Waves/mellow-dex/blob/master/screenshots/charizard.gif "Charizard")
+<p align="center">
+<img style="display:inline; margin: 0 auto;" src="https://raw.githubusercontent.com/Zayd-Waves/mellow-dex/master/screenshots/charizard.gif">
+</p>
 
 ## About
 In anticipation for the upcoming Pokémon [Sun and Moon](http://www.serebii.net/sunmoon/) games, ol' Professor Zayd here decided it was time to make a fancy new Pokédex.
 
 ## The Data
-I want this application to store all the Pokémon-related information for the **current main series games only**. So as of August 2016, that means all 726 Pokémon, every ability, every move. This will change as time goes on.
+I want this application to store all the Pokémon-related information for the **current main series games only**. So as of August 2016, that means information for 726 Pokémon as well as every ability and move accessible in Pokemon X, Y, Alpha Sapphire and Omega Ruby. This will change as time goes on.
 
 As tempting as it is to store all the data on a web server, my original goal was to provide a pokedex with all the data you'll need bundled up with it. There is a *ton* of information that needs to be stored though, so efficiency is key. But since I can totally see myself regretting this later on down the line, a forked, lighter-weight version of the Pokédex is likely.
 
 ## Download
-Right now if you want to download the app to your phone, yo'll have to download the source code and build an .apk yourself. For the second option you'll need to:
+Right now if you want to download the app to your phone, you will have to download the source code and build an .apk yourself. For the second option you'll need to:
 * Download Android Studio
 * Import the code you downloaded as an Android Studio Project
 * Build -> Generate Signed APK.
@@ -34,7 +36,7 @@ I currently don't have any plans to publish this on the app store because of the
 ## Copyright and License
 This software comes bundled with data from the Pokémon series of video games. This is all the intellectual property of Nintendo, Creatures, inc., and GAME FREAK, inc. and is protected by various copyrights and trademarks.
 
-In addition to the below license, if you use any part of Mellow Dex, I would appreciate a shout-out. :)
+In addition to the below license, if you use a significant portion of Mellow Dex I would appreciate a shout-out. :)
 
     Copyright 2016 Zayd Bille
 
