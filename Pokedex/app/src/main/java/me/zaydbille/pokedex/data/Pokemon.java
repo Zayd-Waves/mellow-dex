@@ -47,6 +47,135 @@ public class Pokemon implements Comparable<Pokemon>, Parcelable {
     private int                             spriteId;
     private int                             shinySpriteId;
 
+    public boolean isCanEvolve() {
+        return canEvolve;
+    }
+    public void setCanEvolve(boolean canEvolve) {
+        this.canEvolve = canEvolve;
+    }
+    public String getEvolveMethod() {
+        return evolveMethod;
+    }
+    public void setEvolveMethod(String evolveMethod) {
+        this.evolveMethod = evolveMethod;
+    }
+    public String getEvolutionItem() {
+        return evolutionItem;
+    }
+    public void setEvolutionItem(String evolutionItem) {
+        this.evolutionItem = evolutionItem;
+    }
+    public String getEvolutionHeldItem() {
+        return evolutionHeldItem;
+    }
+    public void setEvolutionHeldItem(String evolutionHeldItem) {
+        this.evolutionHeldItem = evolutionHeldItem;
+    }
+    public int getEvolutionMinimumLevel() {
+        return evolutionMinimumLevel;
+    }
+    public void setEvolutionMinimumLevel(int evolutionMinimumLevel) {
+        this.evolutionMinimumLevel = evolutionMinimumLevel;
+    }
+    public String getEvolutionGender() {
+        return evolutionGender;
+    }
+    public void setEvolutionGender(String evolutionGender) {
+        this.evolutionGender = evolutionGender;
+    }
+    public String getEvolutionLocation() {
+        return evolutionLocation;
+    }
+    public void setEvolutionLocation(String evolutionLocation) {
+        this.evolutionLocation = evolutionLocation;
+    }
+    public String getEvolutionTimeOfDay() {
+        return evolutionTimeOfDay;
+    }
+    public void setEvolutionTimeOfDay(String evolutionTimeOfDay) {
+        this.evolutionTimeOfDay = evolutionTimeOfDay;
+    }
+    public String getEvolutionKnownMove() {
+        return evolutionKnownMove;
+    }
+    public void setEvolutionKnownMove(String evolutionKnownMove) {
+        this.evolutionKnownMove = evolutionKnownMove;
+    }
+    public String getEvolutionKnownMoveType() {
+        return evolutionKnownMoveType;
+    }
+    public void setEvolutionKnownMoveType(String evolutionKnownMoveType) {
+        this.evolutionKnownMoveType = evolutionKnownMoveType;
+    }
+    public int getEvolutionMinimumHappiness() {
+        return evolutionMinimumHappiness;
+    }
+    public void setEvolutionMinimumHappiness(int evolutionMinimumHappiness) {
+        this.evolutionMinimumHappiness = evolutionMinimumHappiness;
+    }
+    public int getEvolutionMinimumBeauty() {
+        return evolutionMinimumBeauty;
+    }
+    public void setEvolutionMinimumBeauty(int evolutionMinimumBeauty) {
+        this.evolutionMinimumBeauty = evolutionMinimumBeauty;
+    }
+    public int getEvolutionMinimumAffection() {
+        return evolutionMinimumAffection;
+    }
+    public void setEvolutionMinimumAffection(int evolutionMinimumAffection) {
+        this.evolutionMinimumAffection = evolutionMinimumAffection;
+    }
+    public int getEvolutionRelativePhysicalStats() {
+        return evolutionRelativePhysicalStats;
+    }
+    public void setEvolutionRelativePhysicalStats(int evolutionRelativePhysicalStats) {
+        this.evolutionRelativePhysicalStats = evolutionRelativePhysicalStats;
+    }
+    public int getEvolutionPartySpeciesId() {
+        return evolutionPartySpeciesId;
+    }
+    public void setEvolutionPartySpeciesId(int evolutionPartySpeciesId) {
+        this.evolutionPartySpeciesId = evolutionPartySpeciesId;
+    }
+    public int getEvolutionTradeSpeciesId() {
+        return evolutionTradeSpeciesId;
+    }
+    public void setEvolutionTradeSpeciesId(int evolutionTradeSpeciesId) {
+        this.evolutionTradeSpeciesId = evolutionTradeSpeciesId;
+    }
+    public boolean isNeedsOverworldRain() {
+        return needsOverworldRain;
+    }
+    public void setNeedsOverworldRain(boolean needsOverworldRain) {
+        this.needsOverworldRain = needsOverworldRain;
+    }
+    public boolean isNeedsUpsideDownSyste() {
+        return needsUpsideDownSyste;
+    }
+    public void setNeedsUpsideDownSyste(boolean needsUpsideDownSyste) {
+        this.needsUpsideDownSyste = needsUpsideDownSyste;
+    }
+
+    private boolean                         canEvolve;
+    private String                          evolveMethod;
+    private String                          evolutionItem;
+    private String                          evolutionHeldItem;
+    private int                             evolutionMinimumLevel;
+    private String                          evolutionGender;
+    private String                          evolutionLocation;
+    private String                          evolutionTimeOfDay;
+    private String                          evolutionKnownMove;
+    private String                          evolutionKnownMoveType;
+    private int                             evolutionMinimumHappiness;
+    private int                             evolutionMinimumBeauty;
+    private int                             evolutionMinimumAffection;
+    private int                             evolutionRelativePhysicalStats;
+    private int                             evolutionPartySpeciesId;
+    private int                             evolutionTradeSpeciesId;
+    private boolean                         needsOverworldRain;
+    private boolean                         needsUpsideDownSyste;
+
+
     public Pokemon() {
     }
     public Pokemon(int num, String na, String type1, String type2) {

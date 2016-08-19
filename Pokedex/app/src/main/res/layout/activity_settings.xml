@@ -63,7 +63,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/radioButtonLabTheme"
-                        android:drawableTop="@drawable/kanto_dex"
+                        android:drawableTop="@drawable/kanto_pokedex_small"
                         android:checked="false" />
                     <TextView
                         android:layout_width="wrap_content"
@@ -80,7 +80,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/radioButtonDPTheme"
-                        android:drawableTop="@drawable/sinnoh_dex"
+                        android:drawableTop="@drawable/sinnoh_pokedex_small"
                         android:checked="false" />
                 </RadioGroup>
 
